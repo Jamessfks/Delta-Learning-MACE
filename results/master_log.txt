@@ -1,0 +1,771 @@
+============================================================
+  MASTER PIPELINE: Delta-Learning Hypothesis Test
+  Device: cuda
+  Time: 2026-02-24 08:50:49
+============================================================
+Phase 1: Running XTB systematicity analysis...
+======================================================================
+  PHASE 1: XTB ERROR SYSTEMATICITY ANALYSIS
+  System: Liquid Water (64 H₂O, periodic, 192 atoms)
+  Method: GFN1-xTB (periodic via POSCAR, etemp=500-4000K retry)
+======================================================================
+
+Loaded 159 validation, 1484 training structures
+
+--- Running GFN2-xTB on 159 validation structures ---
+  XTB progress: 20/159 (20 ok, 0 failed) [0.5/s, ETA 279s]
+  XTB progress: 40/159 (40 ok, 0 failed) [0.6/s, ETA 209s]
+  XTB progress: 60/159 (60 ok, 0 failed) [0.6/s, ETA 180s]
+  XTB progress: 80/159 (80 ok, 0 failed) [0.6/s, ETA 137s]
+  XTB progress: 100/159 (100 ok, 0 failed) [0.6/s, ETA 103s]
+  XTB progress: 120/159 (120 ok, 0 failed) [0.6/s, ETA 65s]
+  XTB progress: 140/159 (140 ok, 0 failed) [0.6/s, ETA 31s]
+  XTB progress: 159/159 (159 ok, 0 failed) [0.6/s, ETA 0s]
+  Completed in 266s
+
+--- Running GFN2-xTB on 1484 training structures ---
+  XTB progress: 20/1484 (20 ok, 0 failed) [0.6/s, ETA 2570s]
+  XTB progress: 40/1484 (40 ok, 0 failed) [0.6/s, ETA 2320s]
+  XTB progress: 60/1484 (60 ok, 0 failed) [0.5/s, ETA 2618s]
+  XTB progress: 80/1484 (80 ok, 0 failed) [0.6/s, ETA 2408s]
+  XTB progress: 100/1484 (100 ok, 0 failed) [0.6/s, ETA 2445s]
+  XTB progress: 120/1484 (120 ok, 0 failed) [0.6/s, ETA 2309s]
+  XTB progress: 140/1484 (140 ok, 0 failed) [0.6/s, ETA 2234s]
+  XTB progress: 160/1484 (160 ok, 0 failed) [0.6/s, ETA 2279s]
+  XTB progress: 180/1484 (180 ok, 0 failed) [0.6/s, ETA 2260s]
+  XTB progress: 200/1484 (200 ok, 0 failed) [0.6/s, ETA 2271s]
+  XTB progress: 220/1484 (220 ok, 0 failed) [0.6/s, ETA 2292s]
+  XTB progress: 240/1484 (240 ok, 0 failed) [0.6/s, ETA 2257s]
+  XTB progress: 260/1484 (260 ok, 0 failed) [0.6/s, ETA 2157s]
+  XTB progress: 280/1484 (280 ok, 0 failed) [0.6/s, ETA 2155s]
+  XTB progress: 300/1484 (300 ok, 0 failed) [0.6/s, ETA 2092s]
+  XTB progress: 320/1484 (320 ok, 0 failed) [0.6/s, ETA 2035s]
+  XTB progress: 340/1484 (340 ok, 0 failed) [0.6/s, ETA 1973s]
+  XTB progress: 360/1484 (360 ok, 0 failed) [0.6/s, ETA 1926s]
+  XTB progress: 380/1484 (380 ok, 0 failed) [0.6/s, ETA 1879s]
+  XTB progress: 400/1484 (400 ok, 0 failed) [0.6/s, ETA 1813s]
+  XTB progress: 420/1484 (420 ok, 0 failed) [0.6/s, ETA 1787s]
+  XTB progress: 440/1484 (440 ok, 0 failed) [0.6/s, ETA 1723s]
+  XTB progress: 460/1484 (460 ok, 0 failed) [0.6/s, ETA 1690s]
+  XTB progress: 480/1484 (480 ok, 0 failed) [0.6/s, ETA 1673s]
+  XTB progress: 500/1484 (500 ok, 0 failed) [0.6/s, ETA 1622s]
+  XTB progress: 520/1484 (520 ok, 0 failed) [0.6/s, ETA 1603s]
+  XTB progress: 540/1484 (540 ok, 0 failed) [0.6/s, ETA 1559s]
+  XTB progress: 560/1484 (560 ok, 0 failed) [0.6/s, ETA 1519s]
+  XTB progress: 580/1484 (580 ok, 0 failed) [0.6/s, ETA 1490s]
+  XTB progress: 600/1484 (600 ok, 0 failed) [0.6/s, ETA 1457s]
+  XTB progress: 620/1484 (620 ok, 0 failed) [0.6/s, ETA 1438s]
+  XTB progress: 640/1484 (640 ok, 0 failed) [0.6/s, ETA 1400s]
+  XTB progress: 660/1484 (660 ok, 0 failed) [0.6/s, ETA 1373s]
+  XTB progress: 680/1484 (680 ok, 0 failed) [0.6/s, ETA 1336s]
+  XTB progress: 700/1484 (700 ok, 0 failed) [0.6/s, ETA 1302s]
+  XTB progress: 720/1484 (720 ok, 0 failed) [0.6/s, ETA 1274s]
+  XTB progress: 740/1484 (740 ok, 0 failed) [0.6/s, ETA 1245s]
+  XTB progress: 760/1484 (760 ok, 0 failed) [0.6/s, ETA 1209s]
+  XTB progress: 780/1484 (780 ok, 0 failed) [0.6/s, ETA 1168s]
+  XTB progress: 800/1484 (800 ok, 0 failed) [0.6/s, ETA 1135s]
+  XTB progress: 820/1484 (820 ok, 0 failed) [0.6/s, ETA 1098s]
+  XTB progress: 840/1484 (840 ok, 0 failed) [0.6/s, ETA 1066s]
+  XTB progress: 860/1484 (860 ok, 0 failed) [0.6/s, ETA 1035s]
+  XTB progress: 880/1484 (880 ok, 0 failed) [0.6/s, ETA 1000s]
+  XTB progress: 900/1484 (900 ok, 0 failed) [0.6/s, ETA 962s]
+  XTB progress: 920/1484 (920 ok, 0 failed) [0.6/s, ETA 929s]
+  XTB progress: 940/1484 (940 ok, 0 failed) [0.6/s, ETA 898s]
+  XTB progress: 960/1484 (960 ok, 0 failed) [0.6/s, ETA 862s]
+  XTB progress: 980/1484 (980 ok, 0 failed) [0.6/s, ETA 831s]
+  XTB progress: 1000/1484 (1000 ok, 0 failed) [0.6/s, ETA 797s]
+  XTB progress: 1020/1484 (1020 ok, 0 failed) [0.6/s, ETA 765s]
+  XTB progress: 1040/1484 (1040 ok, 0 failed) [0.6/s, ETA 731s]
+  XTB progress: 1060/1484 (1060 ok, 0 failed) [0.6/s, ETA 695s]
+  XTB progress: 1080/1484 (1080 ok, 0 failed) [0.6/s, ETA 661s]
+  XTB progress: 1100/1484 (1100 ok, 0 failed) [0.6/s, ETA 627s]
+  XTB progress: 1120/1484 (1120 ok, 0 failed) [0.6/s, ETA 598s]
+  XTB progress: 1140/1484 (1140 ok, 0 failed) [0.6/s, ETA 564s]
+  XTB progress: 1160/1484 (1160 ok, 0 failed) [0.6/s, ETA 530s]
+  XTB progress: 1180/1484 (1180 ok, 0 failed) [0.6/s, ETA 503s]
+  XTB progress: 1200/1484 (1200 ok, 0 failed) [0.6/s, ETA 469s]
+  XTB progress: 1220/1484 (1220 ok, 0 failed) [0.6/s, ETA 435s]
+  XTB progress: 1240/1484 (1240 ok, 0 failed) [0.6/s, ETA 403s]
+  XTB progress: 1260/1484 (1260 ok, 0 failed) [0.6/s, ETA 369s]
+  XTB progress: 1280/1484 (1280 ok, 0 failed) [0.6/s, ETA 337s]
+  XTB progress: 1300/1484 (1300 ok, 0 failed) [0.6/s, ETA 305s]
+  XTB progress: 1320/1484 (1320 ok, 0 failed) [0.6/s, ETA 271s]
+  XTB progress: 1340/1484 (1340 ok, 0 failed) [0.6/s, ETA 238s]
+  XTB progress: 1360/1484 (1360 ok, 0 failed) [0.6/s, ETA 205s]
+  XTB progress: 1380/1484 (1380 ok, 0 failed) [0.6/s, ETA 172s]
+  XTB progress: 1400/1484 (1400 ok, 0 failed) [0.6/s, ETA 138s]
+  XTB progress: 1420/1484 (1420 ok, 0 failed) [0.6/s, ETA 105s]
+  XTB progress: 1440/1484 (1440 ok, 0 failed) [0.6/s, ETA 73s]
+  XTB progress: 1460/1484 (1460 ok, 0 failed) [0.6/s, ETA 40s]
+  XTB progress: 1480/1484 (1480 ok, 0 failed) [0.6/s, ETA 7s]
+  XTB progress: 1484/1484 (1484 ok, 0 failed) [0.6/s, ETA 0s]
+  Completed in 2459s
+======================================================================
+  PHASE 1: XTB ERROR SYSTEMATICITY — VALIDATION SET
+  (159 structures analyzed)
+======================================================================
+
+  Energy Corrections (ΔE = E_DFT − E_XTB)
+  --------------------------------------------------
+    ΔE mean:                 8329.5588 eV
+    ΔE std:                    20.4421 eV
+    ΔE range:                 114.2953 eV
+    ΔE/atom mean:            43383.119 meV/atom
+    ΔE/atom std:               106.469 meV/atom
+    CV(ΔE/atom):              0.002454  ✓ (need < 0.3)
+    R²(E_DFT, E_XTB):         0.067784  ✗ (need > 0.9)
+    Pearson r:                0.260354
+
+  Force Corrections (ΔF = F_DFT − F_XTB)
+  --------------------------------------------------
+    |ΔF| mean:                2132.238 meV/Å
+    ΔF std:                   2601.315 meV/Å
+    ΔF RMS:                   2601.315 meV/Å
+    Per-struct MAE mean:       2132.238 meV/Å
+    Per-struct MAE std:         115.020 meV/Å
+
+  ==================================================
+  DECISION: ✓ PROCEED
+  ==================================================
+
+======================================================================
+  PHASE 1: XTB ERROR SYSTEMATICITY — TRAINING SET
+  (1484 structures analyzed)
+======================================================================
+
+  Energy Corrections (ΔE = E_DFT − E_XTB)
+  --------------------------------------------------
+    ΔE mean:                 8329.7987 eV
+    ΔE std:                    17.9514 eV
+    ΔE range:                 128.6750 eV
+    ΔE/atom mean:            43384.368 meV/atom
+    ΔE/atom std:                93.497 meV/atom
+    CV(ΔE/atom):              0.002155  ✓ (need < 0.3)
+    R²(E_DFT, E_XTB):         0.067796  ✗ (need > 0.9)
+    Pearson r:                0.260376
+
+  Force Corrections (ΔF = F_DFT − F_XTB)
+  --------------------------------------------------
+    |ΔF| mean:                2132.332 meV/Å
+    ΔF std:                   2598.468 meV/Å
+    ΔF RMS:                   2598.468 meV/Å
+    Per-struct MAE mean:       2132.332 meV/Å
+    Per-struct MAE std:         102.955 meV/Å
+
+  ==================================================
+  DECISION: ✓ PROCEED
+  ==================================================
+
+Saved 159 XTB-augmented structures to /home/james/MACE-Helper/data/valid_with_xtb.xyz
+Saved 1484 XTB-augmented structures to /home/james/MACE-Helper/data/train_with_xtb.xyz
+
+Phase 1 complete. Decision: PROCEED
+
+============================================================
+  PHASE 2: TRAINING
+============================================================
+
+============================================================
+  Training: direct_N50_s42
+============================================================
+  OK in 1174s
+
+============================================================
+  Training: delta_N50_s42
+============================================================
+  OK in 645s
+
+============================================================
+  Training: direct_N50_s123
+============================================================
+  OK in 1174s
+
+============================================================
+  Training: delta_N50_s123
+============================================================
+  OK in 591s
+
+============================================================
+  Training: direct_N50_s7
+============================================================
+  OK in 1173s
+
+============================================================
+  Training: delta_N50_s7
+============================================================
+  OK in 721s
+
+============================================================
+  Training: direct_N100_s42
+============================================================
+  OK in 1735s
+
+============================================================
+  Training: delta_N100_s42
+============================================================
+  OK in 1390s
+
+============================================================
+  Training: direct_N100_s123
+============================================================
+  OK in 1733s
+
+============================================================
+  Training: delta_N100_s123
+============================================================
+  OK in 1197s
+
+============================================================
+  Training: direct_N100_s7
+============================================================
+  OK in 1735s
+
+============================================================
+  Training: delta_N100_s7
+============================================================
+  OK in 1186s
+
+============================================================
+  Training: direct_N200_s42
+============================================================
+  OK in 2726s
+
+============================================================
+  Training: delta_N200_s42
+============================================================
+  OK in 2046s
+
+============================================================
+  Training: direct_N200_s123
+============================================================
+  OK in 2786s
+
+============================================================
+  Training: delta_N200_s123
+============================================================
+  OK in 1967s
+
+============================================================
+  Training: direct_N200_s7
+============================================================
+  OK in 2786s
+
+============================================================
+  Training: delta_N200_s7
+============================================================
+  OK in 2069s
+
+============================================================
+  Training: direct_N500_s42
+============================================================
+  OK in 5983s
+
+============================================================
+  Training: delta_N500_s42
+============================================================
+  OK in 5588s
+
+============================================================
+  Training: direct_N500_s123
+============================================================
+  OK in 5747s
+
+============================================================
+  Training: delta_N500_s123
+============================================================
+  OK in 4838s
+
+============================================================
+  Training: direct_N500_s7
+============================================================
+  OK in 5976s
+
+============================================================
+  Training: delta_N500_s7
+============================================================
+  OK in 5308s
+
+============================================================
+  Training: direct_full
+============================================================
+  OK in 15804s
+
+  TRAINING SUMMARY: 25 trained, 0 skipped, 25 total
+
+============================================================
+  PHASE 2: EVALUATION
+============================================================
+/home/james/miniforge3/lib/python3.13/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+Failed to get GPU information from pynvml: Not Supported. Using default values for NVIDIA GB10.
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/mace/calculators/mace.py:197: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/home/james/miniforge3/lib/python3.13/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+======================================================================
+  PHASE 2: CONTROLLED EXPERIMENT
+  Direct MACE vs Δ-MACE at varying DFT budgets
+======================================================================
+
+Dataset: 1484 train, 159 valid, 192 atoms/struct
+
+======================================================================
+  EVALUATION
+======================================================================
+
+Evaluating direct_N50_s42...
+GPU information: NVIDIA GB10, 12, 1, 128, 48, 140, 1700
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.244 meV/atom
+  Force MAE:  2.620 meV/Å
+
+Evaluating delta_N50_s42...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 83.439 meV/atom
+  Force MAE:  2133.905 meV/Å
+
+Evaluating direct_N50_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.221 meV/atom
+  Force MAE:  2.661 meV/Å
+
+Evaluating delta_N50_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 81.196 meV/atom
+  Force MAE:  2133.370 meV/Å
+
+Evaluating direct_N50_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.265 meV/atom
+  Force MAE:  2.675 meV/Å
+
+Evaluating delta_N50_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 81.940 meV/atom
+  Force MAE:  2147.357 meV/Å
+
+Evaluating direct_N100_s42...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.195 meV/atom
+  Force MAE:  2.380 meV/Å
+
+Evaluating delta_N100_s42...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 90.851 meV/atom
+  Force MAE:  2629.118 meV/Å
+
+Evaluating direct_N100_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.175 meV/atom
+  Force MAE:  2.333 meV/Å
+
+Evaluating delta_N100_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 97.297 meV/atom
+  Force MAE:  2272.233 meV/Å
+
+Evaluating direct_N100_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.190 meV/atom
+  Force MAE:  2.309 meV/Å
+
+Evaluating delta_N100_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 84.049 meV/atom
+  Force MAE:  2134.700 meV/Å
+
+Evaluating direct_N200_s42...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.183 meV/atom
+  Force MAE:  2.219 meV/Å
+
+Evaluating delta_N200_s42...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 82.388 meV/atom
+  Force MAE:  2133.697 meV/Å
+
+Evaluating direct_N200_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.159 meV/atom
+  Force MAE:  2.203 meV/Å
+
+Evaluating delta_N200_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 80.022 meV/atom
+  Force MAE:  2131.948 meV/Å
+
+Evaluating direct_N200_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.177 meV/atom
+  Force MAE:  2.242 meV/Å
+
+Evaluating delta_N200_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 82.505 meV/atom
+  Force MAE:  2134.609 meV/Å
+
+Evaluating direct_N500_s42...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.175 meV/atom
+  Force MAE:  2.280 meV/Å
+
+Evaluating delta_N500_s42...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 79.463 meV/atom
+  Force MAE:  2175.374 meV/Å
+
+Evaluating direct_N500_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.149 meV/atom
+  Force MAE:  2.125 meV/Å
+
+Evaluating delta_N500_s123...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 79.931 meV/atom
+  Force MAE:  2152.447 meV/Å
+
+Evaluating direct_N500_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.157 meV/atom
+  Force MAE:  2.165 meV/Å
+
+Evaluating delta_N500_s7...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 79.689 meV/atom
+  Force MAE:  2183.275 meV/Å
+
+Evaluating direct_full (reference)...
+Using head Default out of ['Default']
+Default dtype float32 does not match model dtype float64, converting models to float32.
+  Energy MAE: 0.134 meV/atom
+  Force MAE:  1.938 meV/Å
+
+Results saved to /home/james/MACE-Helper/testing_hypothesis/results/phase2_results.json
+
+============================================================
+  PHASE 3: STATISTICAL ANALYSIS
+============================================================
+/home/james/MACE-Helper/testing_hypothesis/phase3_analysis.py:208: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(data, labels=labels, patch_artist=True)
+/home/james/MACE-Helper/testing_hypothesis/phase3_analysis.py:208: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(data, labels=labels, patch_artist=True)
+/home/james/MACE-Helper/testing_hypothesis/phase3_analysis.py:208: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(data, labels=labels, patch_artist=True)
+/home/james/MACE-Helper/testing_hypothesis/phase3_analysis.py:208: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  bp = ax.boxplot(data, labels=labels, patch_artist=True)
+======================================================================
+  PHASE 3: STATISTICAL ANALYSIS
+======================================================================
+==============================================================================
+  PHASE 3: STATISTICAL ANALYSIS SUMMARY
+==============================================================================
+
+   N_DFT        Direct MAE        Δ-MACE MAE   Ratio    p-value      Effect
+  ------------------------------------------------------------------------------
+      50         2.65±0.02      2138.21±6.47   0.00×    0.0000*       LARGE
+     100         2.34±0.03    2345.35±208.36   0.00×    0.0039*       LARGE
+     200         2.22±0.02      2133.42±1.10   0.00×    0.0000*       LARGE
+     500         2.19±0.07     2170.37±13.07   0.00×    0.0000*       LARGE
+
+  * = statistically significant (p < 0.05)
+
+Saved learning curves to /home/james/MACE-Helper/testing_hypothesis/figures/learning_curves.png
+Saved improvement bars to /home/james/MACE-Helper/testing_hypothesis/figures/improvement_bars.png
+Saved force distributions to /home/james/MACE-Helper/testing_hypothesis/figures/force_distributions.png
+
+Saved analysis to /home/james/MACE-Helper/testing_hypothesis/results/phase3_analysis.json
+
+============================================================
+  PHASE 5: FINAL REPORT
+============================================================
+══════════════════════════════════════════════════════════════════════════════
+  DELTA-LEARNING MACE HYPOTHESIS TEST — FINAL REPORT
+  Date: 2026-02-25 07:18
+  System: Liquid Water (64 H₂O, periodic, 192 atoms)
+  Reference: DFT (from Liquid_Water.xyz)
+  Baseline: GFN2-xTB
+  Architecture: MACE (64x0e+64x1o, 2 interactions, correlation 3)
+══════════════════════════════════════════════════════════════════════════════
+
+1. PREREQUISITE: XTB ERROR SYSTEMATICITY
+──────────────────────────────────────────────────────────────────────────────
+                                     Validation         Training
+  -------------------------------------------------------
+  R²(E_DFT, E_XTB):                   0.067784         0.067796
+  CV(ΔE):                                0.0025           0.0022
+  ΔE mean (eV):                       8329.5588        8329.7987
+  ΔE std (eV):                          20.4421          17.9514
+  ΔE/atom mean (meV):                 43383.119        43384.368
+  ΔE/atom std (meV):                    106.469           93.497
+  |ΔF| mean (meV/Å):                   2132.238
+  ΔF RMS (meV/Å):                      2601.315
+
+  Decision: ✓ PROCEED
+
+2. LEARNING CURVE RESULTS
+──────────────────────────────────────────────────────────────────────────────
+   N_DFT      Direct Force MAE      Δ-MACE Force MAE   Improvement
+  ──────  ────────────────────  ────────────────────  ────────────
+      50           2.65 ± 0.02        2138.21 ± 6.47        0.00×
+     100           2.34 ± 0.03      2345.35 ± 208.36        0.00×
+     200           2.22 ± 0.02        2133.42 ± 1.10        0.00×
+     500           2.19 ± 0.07       2170.37 ± 13.07        0.00×
+
+   N_DFT     Direct Energy MAE     Δ-MACE Energy MAE   Improvement
+  ──────  ────────────────────  ────────────────────  ────────────
+      50         0.243 ± 0.018        82.192 ± 0.933        0.00×
+     100         0.187 ± 0.009        90.733 ± 5.409        0.00×
+     200         0.173 ± 0.010        81.638 ± 1.144        0.00×
+     500         0.160 ± 0.011        79.694 ± 0.191        0.00×
+
+  Reference (full N=1484): Force MAE = 1.94 meV/Å, Energy MAE = 0.134 meV/atom
+
+3. STATISTICAL SIGNIFICANCE
+──────────────────────────────────────────────────────────────────────────────
+  Force MAE:
+    N= 50: p=0.0000  Cohen's d=-466.70  [SIGNIFICANT] [LARGE]
+    N=100: p=0.0039  Cohen's d=-15.90  [SIGNIFICANT] [LARGE]
+    N=200: p=0.0000  Cohen's d=-2729.31  [SIGNIFICANT] [LARGE]
+    N=500: p=0.0000  Cohen's d=-234.52  [SIGNIFICANT] [LARGE]
+
+  Energy MAE:
+    N= 50: p=0.0001  Cohen's d=-124.21  [SIGNIFICANT] [LARGE]
+    N=100: p=0.0018  Cohen's d=-23.67  [SIGNIFICANT] [LARGE]
+    N=200: p=0.0001  Cohen's d=-100.70  [SIGNIFICANT] [LARGE]
+    N=500: p=0.0000  Cohen's d=-586.80  [SIGNIFICANT] [LARGE]
+
+4. ABLATION RESULTS (N_DFT = 200)
+──────────────────────────────────────────────────────────────────────────────
+  Ablation results not available.
+
+5. CONCLUSION
+──────────────────────────────────────────────────────────────────────────────
+  Hypothesis REJECTED:
+  
+    At N=50: ratio = 0.00×
+    At N=100: ratio = 0.00×
+    At N=200: ratio = 0.00×
+    At N=500: ratio = 0.00×
+  
+  Direct MACE training matches or exceeds Δ-learning at most
+  DFT budgets tested. Possible explanations:
+    (a) XTB errors on liquid water are sufficiently systematic
+        but MACE is already efficient enough to learn directly
+    (b) The correction field is not substantially simpler than
+        the absolute energy surface for this system
+    (c) Energy reference alignment issues may degrade Δ-learning
+  
+  Implications for microelectronics:
+    The water results establish the methodology's viability. For
+    Si/SiO₂ and HfO₂ systems, XTB reliability must be validated
+    independently, as GFN2-xTB may exhibit non-systematic errors
+    on these materials.
+
+6. RECOMMENDATIONS
+──────────────────────────────────────────────────────────────────────────────
+  1. XTB errors are systematic — proceed to microelectronics validation
+  2. Test on Si/SiO₂ interface structures to validate for microelectronics
+  3. Compare MACE vs NequIP/ALLEGRO architectures for correction learning
+  4. Investigate smoothness regularization on unlabeled XTB configurations
+  5. Run MD stability tests with Δ-MACE models to verify dynamics quality
+
+══════════════════════════════════════════════════════════════════════════════
+
+  Figures: testing_hypothesis/figures/
+    - learning_curves.png
+    - improvement_bars.png
+    - force_distributions.png
+
+══════════════════════════════════════════════════════════════════════════════
+
+Report saved to /home/james/MACE-Helper/testing_hypothesis/FINAL_REPORT.txt
+
+============================================================
+  ALL PHASES COMPLETE
+  Time: 2026-02-25 07:18:46
+============================================================
+
+Results:
+  Phase 1: /home/james/MACE-Helper/testing_hypothesis/results/phase1_analysis.json
+  Phase 2: /home/james/MACE-Helper/testing_hypothesis/results/phase2_results.json
+  Phase 3: /home/james/MACE-Helper/testing_hypothesis/results/phase3_analysis.json
+  Figures: /home/james/MACE-Helper/testing_hypothesis/figures
+  Report:  /home/james/MACE-Helper/testing_hypothesis/FINAL_REPORT.txt

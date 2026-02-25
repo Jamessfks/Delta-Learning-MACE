@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:Jamessfks/-Delta-Learning-MACE.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[user]
+	email = jamessfks@users.noreply.github.com
+	name = Jamessfks

@@ -1,0 +1,49 @@
+{
+  "validation": {
+    "n_structures": 159,
+    "energy": {
+      "delta_E_mean_eV": 8329.558820390906,
+      "delta_E_std_eV": 20.442138487115123,
+      "delta_E_range_eV": 114.29525913973157,
+      "delta_E_per_atom_mean_meV": 43383.118856202644,
+      "delta_E_per_atom_std_meV": 106.4694712870578,
+      "coefficient_of_variation": 0.002454168213215856,
+      "cv_per_atom": 0.0024541682132158526,
+      "R2_dft_vs_xtb": 0.06778442675914209,
+      "pearson_r": 0.2603544252728232,
+      "pearson_p": 0.0009184324022046621
+    },
+    "forces": {
+      "delta_F_mean_meV_A": 2132.238110177631,
+      "delta_F_std_meV_A": 2601.3148450404065,
+      "delta_F_rms_meV_A": 2601.31484504112,
+      "per_struct_force_mae_mean_meV_A": 2132.238110177631,
+      "per_struct_force_mae_std_meV_A": 115.01988612696435
+    },
+    "decision": "PROCEED"
+  },
+  "training": {
+    "n_structures": 1484,
+    "energy": {
+      "delta_E_mean_eV": 8329.79866992048,
+      "delta_E_std_eV": 17.951399870170984,
+      "delta_E_range_eV": 128.67503983427196,
+      "delta_E_per_atom_mean_meV": 43384.36807250249,
+      "delta_E_per_atom_std_meV": 93.49687432380725,
+      "coefficient_of_variation": 0.0021550820831954583,
+      "cv_per_atom": 0.0021550820831954596,
+      "R2_dft_vs_xtb": 0.06779556596013928,
+      "pearson_r": 0.2603758167728702,
+      "pearson_p": 2.0168791556367232e-24
+    },
+    "forces": {
+      "delta_F_mean_meV_A": 2132.3316526404374,
+      "delta_F_std_meV_A": 2598.468350125027,
+      "delta_F_rms_meV_A": 2598.468350125031,
+      "per_struct_force_mae_mean_meV_A": 2132.3316526404374,
+      "per_struct_force_mae_std_meV_A": 102.95506510479983
+    },
+    "decision": "PROCEED"
+  },
+  "decision": "PROCEED"
+}

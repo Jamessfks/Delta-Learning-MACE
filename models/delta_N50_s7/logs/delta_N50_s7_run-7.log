@@ -1,0 +1,177 @@
+2026-02-24 10:55:38.941 INFO: ===========VERIFYING SETTINGS===========
+2026-02-24 10:55:38.941 INFO: MACE version: 0.3.14
+2026-02-24 10:55:39.070 INFO: CUDA version: 13.0, CUDA device: 0
+2026-02-24 10:55:39.095 INFO: ===========LOADING INPUT DATA===========
+2026-02-24 10:55:39.095 INFO: Using heads: ['Default']
+2026-02-24 10:55:39.095 INFO: Using the key specifications to parse data:
+2026-02-24 10:55:39.095 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2026-02-24 10:55:39.095 INFO: =============    Processing head Default     ===========
+2026-02-24 10:55:39.123 INFO: Training set 1/1 [energy: 50, stress: 0, virials: 0, dipole components: 0, head: 50, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 50, charges: 0]
+2026-02-24 10:55:39.123 INFO: Total Training set [energy: 50, stress: 0, virials: 0, dipole components: 0, head: 50, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 50, charges: 0]
+2026-02-24 10:55:39.181 INFO: Validation set 1/1 [energy: 159, stress: 0, virials: 0, dipole components: 0, head: 159, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 159, charges: 0]
+2026-02-24 10:55:39.181 INFO: Total Validation set [energy: 159, stress: 0, virials: 0, dipole components: 0, head: 159, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 159, charges: 0]
+2026-02-24 10:55:39.181 INFO: Total number of configurations: train=50, valid=159, tests=[],
+2026-02-24 10:55:39.183 INFO: Atomic Numbers used: [np.int64(1), np.int64(8)]
+2026-02-24 10:55:39.183 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-02-24 10:55:39.183 INFO: Computing average Atomic Energies using least squares regression
+2026-02-24 10:55:39.183 INFO: Atomic Energies used (z: eV) for head Default: {1: 52.06198793055629, 8: 26.030993965278146}
+2026-02-24 10:55:39.183 INFO: Processing datasets for head 'Default'
+2026-02-24 10:55:39.197 INFO: Combining 1 list datasets for head 'Default'
+2026-02-24 10:55:39.235 INFO: Combining 1 list datasets for head 'Default_valid'
+2026-02-24 10:55:39.235 INFO: Combined validation datasets for Default
+2026-02-24 10:55:39.235 INFO: Head 'Default' training dataset size: 50
+2026-02-24 10:55:39.235 INFO: Computing average number of neighbors
+2026-02-24 10:55:39.418 INFO: Average number of neighbors: 5.554904513888889
+2026-02-24 10:55:39.418 INFO: During training the following quantities will be reported: energy, forces
+2026-02-24 10:55:39.418 INFO: ===========MODEL DETAILS===========
+2026-02-24 10:55:39.428 INFO: Building model
+2026-02-24 10:55:39.428 INFO: Message passing with 64 channels and max_L=1 (64x0e+64x1o)
+2026-02-24 10:55:39.428 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-02-24 10:55:39.428 INFO: 8 radial and 5 basis functions
+2026-02-24 10:55:39.428 INFO: Radial cutoff: 5.0 A (total receptive field for each atom: 10.0 A)
+2026-02-24 10:55:39.429 INFO: Distance transform for radial basis functions: None
+2026-02-24 10:55:39.429 INFO: Hidden irreps: 64x0e+64x1o
+2026-02-24 10:55:39.934 INFO: Total number of parameters: 213456
+2026-02-24 10:55:39.934 INFO: 
+2026-02-24 10:55:39.934 INFO: ===========OPTIMIZER INFORMATION===========
+2026-02-24 10:55:39.934 INFO: Using ADAM as parameter optimizer
+2026-02-24 10:55:39.934 INFO: Batch size: 4
+2026-02-24 10:55:39.934 INFO: Using Exponential Moving Average with decay: 0.99
+2026-02-24 10:55:39.934 INFO: Number of gradient updates: 1875
+2026-02-24 10:55:39.934 INFO: Learning rate: 0.01, weight decay: 5e-07
+2026-02-24 10:55:39.934 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=100.000)
+2026-02-24 10:55:39.935 INFO: Stage Two (after 111 epochs) with loss function: WeightedEnergyForcesLoss(energy_weight=100.000, forces_weight=10.000), with energy weight : 100.0, forces weight : 10.0 and learning rate : 0.001
+2026-02-24 10:55:39.975 INFO: Using gradient clipping with tolerance=10.000
+2026-02-24 10:55:39.975 INFO: 
+2026-02-24 10:55:39.975 INFO: ===========TRAINING===========
+2026-02-24 10:55:39.975 INFO: Started training, reporting errors on validation set
+2026-02-24 10:55:39.975 INFO: Loss metrics on validation set
+2026-02-24 10:55:45.451 INFO: Initial: head: Default, loss=68.12193939, MAE_E_per_atom=   89.55 meV, MAE_F= 2132.74 meV / A
+2026-02-24 10:55:54.215 INFO: Epoch 0: head: Default, loss=68.11360748, MAE_E_per_atom=   82.66 meV, MAE_F= 2132.76 meV / A
+2026-02-24 10:56:01.990 INFO: Epoch 1: head: Default, loss=68.04690876, MAE_E_per_atom=   80.43 meV, MAE_F= 2131.82 meV / A
+2026-02-24 10:56:09.625 INFO: Epoch 2: head: Default, loss=68.06283551, MAE_E_per_atom=   81.31 meV, MAE_F= 2131.90 meV / A
+2026-02-24 10:56:17.250 INFO: Epoch 3: head: Default, loss=68.03898847, MAE_E_per_atom=   80.59 meV, MAE_F= 2131.70 meV / A
+2026-02-24 10:56:24.885 INFO: Epoch 4: head: Default, loss=68.03746688, MAE_E_per_atom=   80.96 meV, MAE_F= 2131.49 meV / A
+2026-02-24 10:56:32.521 INFO: Epoch 5: head: Default, loss=68.04638635, MAE_E_per_atom=   80.22 meV, MAE_F= 2131.86 meV / A
+2026-02-24 10:56:40.147 INFO: Epoch 6: head: Default, loss=68.03503342, MAE_E_per_atom=   80.42 meV, MAE_F= 2131.56 meV / A
+2026-02-24 10:56:47.786 INFO: Epoch 7: head: Default, loss=68.03494937, MAE_E_per_atom=   80.00 meV, MAE_F= 2131.67 meV / A
+2026-02-24 10:56:55.428 INFO: Epoch 8: head: Default, loss=68.04150801, MAE_E_per_atom=   80.13 meV, MAE_F= 2131.71 meV / A
+2026-02-24 10:57:03.080 INFO: Epoch 9: head: Default, loss=68.03868867, MAE_E_per_atom=   80.07 meV, MAE_F= 2131.66 meV / A
+2026-02-24 10:57:10.703 INFO: Epoch 10: head: Default, loss=68.03767494, MAE_E_per_atom=   79.95 meV, MAE_F= 2131.68 meV / A
+2026-02-24 10:57:18.335 INFO: Epoch 11: head: Default, loss=68.03818076, MAE_E_per_atom=   80.27 meV, MAE_F= 2131.60 meV / A
+2026-02-24 10:57:25.965 INFO: Epoch 12: head: Default, loss=68.03980251, MAE_E_per_atom=   80.19 meV, MAE_F= 2131.64 meV / A
+2026-02-24 10:57:33.593 INFO: Epoch 13: head: Default, loss=68.03781160, MAE_E_per_atom=   80.20 meV, MAE_F= 2131.64 meV / A
+2026-02-24 10:57:41.223 INFO: Epoch 14: head: Default, loss=68.04145305, MAE_E_per_atom=   80.08 meV, MAE_F= 2131.73 meV / A
+2026-02-24 10:57:48.841 INFO: Epoch 15: head: Default, loss=68.03299108, MAE_E_per_atom=   80.24 meV, MAE_F= 2131.55 meV / A
+2026-02-24 10:57:56.479 INFO: Epoch 16: head: Default, loss=68.03571527, MAE_E_per_atom=   80.20 meV, MAE_F= 2131.61 meV / A
+2026-02-24 10:58:04.118 INFO: Epoch 17: head: Default, loss=68.03571288, MAE_E_per_atom=   80.31 meV, MAE_F= 2131.63 meV / A
+2026-02-24 10:58:11.768 INFO: Epoch 18: head: Default, loss=68.03376499, MAE_E_per_atom=   80.36 meV, MAE_F= 2131.65 meV / A
+2026-02-24 10:58:19.434 INFO: Epoch 19: head: Default, loss=68.05425789, MAE_E_per_atom=   80.64 meV, MAE_F= 2131.90 meV / A
+2026-02-24 10:58:27.079 INFO: Epoch 20: head: Default, loss=68.05680884, MAE_E_per_atom=   80.71 meV, MAE_F= 2131.95 meV / A
+2026-02-24 10:58:34.718 INFO: Epoch 21: head: Default, loss=68.05123850, MAE_E_per_atom=   80.84 meV, MAE_F= 2131.87 meV / A
+2026-02-24 10:58:42.371 INFO: Epoch 22: head: Default, loss=68.04327219, MAE_E_per_atom=   80.90 meV, MAE_F= 2131.77 meV / A
+2026-02-24 10:58:50.021 INFO: Epoch 23: head: Default, loss=68.04308069, MAE_E_per_atom=   80.95 meV, MAE_F= 2131.78 meV / A
+2026-02-24 10:58:57.675 INFO: Epoch 24: head: Default, loss=68.04225525, MAE_E_per_atom=   81.00 meV, MAE_F= 2131.78 meV / A
+2026-02-24 10:59:05.303 INFO: Epoch 25: head: Default, loss=68.03372202, MAE_E_per_atom=   81.12 meV, MAE_F= 2131.56 meV / A
+2026-02-24 10:59:12.954 INFO: Epoch 26: head: Default, loss=68.03749036, MAE_E_per_atom=   80.65 meV, MAE_F= 2131.69 meV / A
+2026-02-24 10:59:20.620 INFO: Epoch 27: head: Default, loss=68.04001265, MAE_E_per_atom=   80.82 meV, MAE_F= 2131.73 meV / A
+2026-02-24 10:59:28.281 INFO: Epoch 28: head: Default, loss=68.03096843, MAE_E_per_atom=   81.02 meV, MAE_F= 2131.55 meV / A
+2026-02-24 10:59:35.959 INFO: Epoch 29: head: Default, loss=68.02857946, MAE_E_per_atom=   80.93 meV, MAE_F= 2131.56 meV / A
+2026-02-24 10:59:43.626 INFO: Epoch 30: head: Default, loss=68.03708762, MAE_E_per_atom=   80.44 meV, MAE_F= 2131.69 meV / A
+2026-02-24 10:59:51.270 INFO: Epoch 31: head: Default, loss=68.04904647, MAE_E_per_atom=   80.34 meV, MAE_F= 2131.96 meV / A
+2026-02-24 10:59:58.921 INFO: Epoch 32: head: Default, loss=68.05331913, MAE_E_per_atom=   80.68 meV, MAE_F= 2132.05 meV / A
+2026-02-24 11:00:06.572 INFO: Epoch 33: head: Default, loss=68.05501593, MAE_E_per_atom=   80.97 meV, MAE_F= 2132.10 meV / A
+2026-02-24 11:00:14.225 INFO: Epoch 34: head: Default, loss=68.05751983, MAE_E_per_atom=   81.24 meV, MAE_F= 2132.18 meV / A
+2026-02-24 11:00:21.885 INFO: Epoch 35: head: Default, loss=68.06242272, MAE_E_per_atom=   81.20 meV, MAE_F= 2132.28 meV / A
+2026-02-24 11:00:29.527 INFO: Epoch 36: head: Default, loss=68.06979613, MAE_E_per_atom=   81.26 meV, MAE_F= 2132.44 meV / A
+2026-02-24 11:00:37.174 INFO: Epoch 37: head: Default, loss=68.07927898, MAE_E_per_atom=   81.14 meV, MAE_F= 2132.70 meV / A
+2026-02-24 11:00:44.819 INFO: Epoch 38: head: Default, loss=68.09069825, MAE_E_per_atom=   81.04 meV, MAE_F= 2132.96 meV / A
+2026-02-24 11:00:52.470 INFO: Epoch 39: head: Default, loss=68.09507930, MAE_E_per_atom=   81.10 meV, MAE_F= 2133.06 meV / A
+2026-02-24 11:01:00.123 INFO: Epoch 40: head: Default, loss=68.10947297, MAE_E_per_atom=   81.11 meV, MAE_F= 2133.33 meV / A
+2026-02-24 11:01:07.765 INFO: Epoch 41: head: Default, loss=68.11520244, MAE_E_per_atom=   81.14 meV, MAE_F= 2133.47 meV / A
+2026-02-24 11:01:15.422 INFO: Epoch 42: head: Default, loss=68.13030644, MAE_E_per_atom=   81.37 meV, MAE_F= 2133.76 meV / A
+2026-02-24 11:01:23.063 INFO: Epoch 43: head: Default, loss=68.11015794, MAE_E_per_atom=   81.42 meV, MAE_F= 2133.32 meV / A
+2026-02-24 11:01:30.709 INFO: Epoch 44: head: Default, loss=68.12108233, MAE_E_per_atom=   81.49 meV, MAE_F= 2133.57 meV / A
+2026-02-24 11:01:38.348 INFO: Epoch 45: head: Default, loss=68.12472277, MAE_E_per_atom=   81.46 meV, MAE_F= 2133.58 meV / A
+2026-02-24 11:01:45.997 INFO: Epoch 46: head: Default, loss=68.13225150, MAE_E_per_atom=   81.38 meV, MAE_F= 2133.65 meV / A
+2026-02-24 11:01:53.654 INFO: Epoch 47: head: Default, loss=68.15549659, MAE_E_per_atom=   81.35 meV, MAE_F= 2134.12 meV / A
+2026-02-24 11:02:01.298 INFO: Epoch 48: head: Default, loss=68.16663936, MAE_E_per_atom=   81.45 meV, MAE_F= 2134.35 meV / A
+2026-02-24 11:02:08.947 INFO: Epoch 49: head: Default, loss=68.19516513, MAE_E_per_atom=   81.42 meV, MAE_F= 2134.93 meV / A
+2026-02-24 11:02:16.586 INFO: Epoch 50: head: Default, loss=68.22344510, MAE_E_per_atom=   81.40 meV, MAE_F= 2135.47 meV / A
+2026-02-24 11:02:24.235 INFO: Epoch 51: head: Default, loss=68.26142270, MAE_E_per_atom=   81.25 meV, MAE_F= 2136.20 meV / A
+2026-02-24 11:02:31.888 INFO: Epoch 52: head: Default, loss=68.28779704, MAE_E_per_atom=   81.21 meV, MAE_F= 2136.71 meV / A
+2026-02-24 11:02:39.540 INFO: Epoch 53: head: Default, loss=68.32392055, MAE_E_per_atom=   81.50 meV, MAE_F= 2137.37 meV / A
+2026-02-24 11:02:47.196 INFO: Epoch 54: head: Default, loss=68.38084447, MAE_E_per_atom=   81.54 meV, MAE_F= 2138.26 meV / A
+2026-02-24 11:02:54.847 INFO: Epoch 55: head: Default, loss=68.47087471, MAE_E_per_atom=   81.48 meV, MAE_F= 2139.59 meV / A
+2026-02-24 11:03:02.499 INFO: Epoch 56: head: Default, loss=68.56400325, MAE_E_per_atom=   81.45 meV, MAE_F= 2140.73 meV / A
+2026-02-24 11:03:10.154 INFO: Epoch 57: head: Default, loss=68.76309004, MAE_E_per_atom=   81.57 meV, MAE_F= 2142.50 meV / A
+2026-02-24 11:03:17.802 INFO: Epoch 58: head: Default, loss=69.15439624, MAE_E_per_atom=   81.60 meV, MAE_F= 2144.69 meV / A
+2026-02-24 11:03:25.449 INFO: Epoch 59: head: Default, loss=69.55580502, MAE_E_per_atom=   81.73 meV, MAE_F= 2146.91 meV / A
+2026-02-24 11:03:25.450 INFO: Stopping optimization after 30 epochs without improvement and starting Stage Two
+2026-02-24 11:03:25.450 INFO: Changing loss based on Stage Two Weights
+2026-02-24 11:03:33.092 INFO: Epoch 112: head: Default, loss=7.06695375, MAE_E_per_atom=   81.94 meV, MAE_F= 2147.36 meV / A
+2026-02-24 11:03:40.766 INFO: Epoch 113: head: Default, loss=7.08773939, MAE_E_per_atom=   82.11 meV, MAE_F= 2149.57 meV / A
+2026-02-24 11:03:48.424 INFO: Epoch 114: head: Default, loss=7.18405034, MAE_E_per_atom=   82.25 meV, MAE_F= 2152.52 meV / A
+2026-02-24 11:03:56.078 INFO: Epoch 115: head: Default, loss=7.51371325, MAE_E_per_atom=   82.36 meV, MAE_F= 2156.52 meV / A
+2026-02-24 11:04:03.730 INFO: Epoch 116: head: Default, loss=8.55465337, MAE_E_per_atom=   82.51 meV, MAE_F= 2163.91 meV / A
+2026-02-24 11:04:11.371 INFO: Epoch 117: head: Default, loss=10.62627152, MAE_E_per_atom=   82.73 meV, MAE_F= 2173.71 meV / A
+2026-02-24 11:04:19.030 INFO: Epoch 118: head: Default, loss=12.98232992, MAE_E_per_atom=   82.93 meV, MAE_F= 2183.16 meV / A
+2026-02-24 11:04:26.701 INFO: Epoch 119: head: Default, loss=18.23636761, MAE_E_per_atom=   83.13 meV, MAE_F= 2195.48 meV / A
+2026-02-24 11:04:34.368 INFO: Epoch 120: head: Default, loss=26.29909552, MAE_E_per_atom=   83.38 meV, MAE_F= 2209.33 meV / A
+2026-02-24 11:04:42.027 INFO: Epoch 121: head: Default, loss=38.25453265, MAE_E_per_atom=   83.66 meV, MAE_F= 2224.87 meV / A
+2026-02-24 11:04:49.685 INFO: Epoch 122: head: Default, loss=54.38442247, MAE_E_per_atom=   84.12 meV, MAE_F= 2241.31 meV / A
+2026-02-24 11:04:57.344 INFO: Epoch 123: head: Default, loss=73.90490699, MAE_E_per_atom=   84.65 meV, MAE_F= 2257.25 meV / A
+2026-02-24 11:05:04.992 INFO: Epoch 124: head: Default, loss=96.20227871, MAE_E_per_atom=   85.21 meV, MAE_F= 2272.05 meV / A
+2026-02-24 11:05:12.643 INFO: Epoch 125: head: Default, loss=122.46188663, MAE_E_per_atom=   85.79 meV, MAE_F= 2286.82 meV / A
+2026-02-24 11:05:20.276 INFO: Epoch 126: head: Default, loss=156.11152516, MAE_E_per_atom=   86.40 meV, MAE_F= 2304.05 meV / A
+2026-02-24 11:05:27.938 INFO: Epoch 127: head: Default, loss=196.71828875, MAE_E_per_atom=   87.04 meV, MAE_F= 2323.29 meV / A
+2026-02-24 11:05:35.586 INFO: Epoch 128: head: Default, loss=244.37457667, MAE_E_per_atom=   87.72 meV, MAE_F= 2343.95 meV / A
+2026-02-24 11:05:43.240 INFO: Epoch 129: head: Default, loss=298.18908329, MAE_E_per_atom=   88.40 meV, MAE_F= 2364.78 meV / A
+2026-02-24 11:05:50.891 INFO: Epoch 130: head: Default, loss=354.39302164, MAE_E_per_atom=   89.01 meV, MAE_F= 2384.28 meV / A
+2026-02-24 11:05:58.553 INFO: Epoch 131: head: Default, loss=420.44723996, MAE_E_per_atom=   89.76 meV, MAE_F= 2404.82 meV / A
+2026-02-24 11:06:06.203 INFO: Epoch 132: head: Default, loss=488.74217849, MAE_E_per_atom=   90.52 meV, MAE_F= 2423.60 meV / A
+2026-02-24 11:06:13.846 INFO: Epoch 133: head: Default, loss=557.22541146, MAE_E_per_atom=   91.21 meV, MAE_F= 2440.95 meV / A
+2026-02-24 11:06:21.503 INFO: Epoch 134: head: Default, loss=627.24703034, MAE_E_per_atom=   91.95 meV, MAE_F= 2456.56 meV / A
+2026-02-24 11:06:29.153 INFO: Epoch 135: head: Default, loss=696.35721012, MAE_E_per_atom=   92.74 meV, MAE_F= 2468.76 meV / A
+2026-02-24 11:06:36.809 INFO: Epoch 136: head: Default, loss=779.93623100, MAE_E_per_atom=   93.51 meV, MAE_F= 2489.43 meV / A
+2026-02-24 11:06:44.459 INFO: Epoch 137: head: Default, loss=882.89488780, MAE_E_per_atom=   94.37 meV, MAE_F= 2511.12 meV / A
+2026-02-24 11:06:52.116 INFO: Epoch 138: head: Default, loss=991.60604212, MAE_E_per_atom=   95.23 meV, MAE_F= 2532.88 meV / A
+2026-02-24 11:06:59.762 INFO: Epoch 139: head: Default, loss=1099.57839791, MAE_E_per_atom=   96.02 meV, MAE_F= 2553.81 meV / A
+2026-02-24 11:07:07.399 INFO: Epoch 140: head: Default, loss=1219.50815847, MAE_E_per_atom=   96.83 meV, MAE_F= 2575.92 meV / A
+2026-02-24 11:07:15.047 INFO: Epoch 141: head: Default, loss=1361.84812510, MAE_E_per_atom=   97.80 meV, MAE_F= 2600.44 meV / A
+2026-02-24 11:07:22.698 INFO: Epoch 142: head: Default, loss=1511.11734689, MAE_E_per_atom=   98.73 meV, MAE_F= 2624.73 meV / A
+2026-02-24 11:07:22.699 INFO: Stopping optimization after 30 epochs without improvement
+2026-02-24 11:07:22.699 INFO: Training complete
+2026-02-24 11:07:22.699 INFO: 
+2026-02-24 11:07:22.699 INFO: ===========RESULTS===========
+2026-02-24 11:07:22.699 INFO: Loading checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/delta_N50_s7/checkpoints/delta_N50_s7_run-7_epoch-29.pt
+2026-02-24 11:07:22.709 INFO: Loaded Stage one model from epoch 29 for evaluation
+2026-02-24 11:07:22.709 INFO: Saving model to /home/james/MACE-Helper/runs/hypothesis_test/delta_N50_s7/checkpoints/delta_N50_s7_run-7.model
+2026-02-24 11:07:22.788 INFO: Compiling model, saving metadata to /home/james/MACE-Helper/runs/hypothesis_test/delta_N50_s7/delta_N50_s7_compiled.model
+2026-02-24 11:07:23.076 INFO: Computing metrics for training, validation, and test sets
+2026-02-24 11:07:23.076 INFO: Skipping evaluation for heads: ['pt_head']
+2026-02-24 11:07:23.076 INFO: Evaluating train_Default ...
+2026-02-24 11:07:24.382 INFO: Evaluating valid_Default ...
+2026-02-24 11:07:28.743 INFO: Error-table on TRAIN and VALID:
++---------------+--------------------+-----------------+------------------+
+|  config_type  | MAE E / meV / atom | MAE F / meV / A | relative F MAE % |
++---------------+--------------------+-----------------+------------------+
+| train_Default |          75.0      |       2130.1    |        99.89     |
+| valid_Default |          80.9      |       2131.6    |        99.97     |
++---------------+--------------------+-----------------+------------------+
+2026-02-24 11:07:28.874 INFO: Loading checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/delta_N50_s7/checkpoints/delta_N50_s7_run-7_epoch-112_swa.pt
+2026-02-24 11:07:28.884 INFO: Loaded Stage two model from epoch 112 for evaluation
+2026-02-24 11:07:28.884 INFO: Saving model to /home/james/MACE-Helper/runs/hypothesis_test/delta_N50_s7/checkpoints/delta_N50_s7_run-7_stagetwo.model
+2026-02-24 11:07:28.970 INFO: Compiling model, saving metadata /home/james/MACE-Helper/runs/hypothesis_test/delta_N50_s7/delta_N50_s7_stagetwo_compiled.model
+2026-02-24 11:07:29.245 INFO: Computing metrics for training, validation, and test sets
+2026-02-24 11:07:29.245 INFO: Skipping evaluation for heads: ['pt_head']
+2026-02-24 11:07:29.245 INFO: Evaluating train_Default ...
+2026-02-24 11:07:30.524 INFO: Evaluating valid_Default ...
+2026-02-24 11:07:34.866 INFO: Error-table on TRAIN and VALID:
++---------------+--------------------+-----------------+------------------+
+|  config_type  | MAE E / meV / atom | MAE F / meV / A | relative F MAE % |
++---------------+--------------------+-----------------+------------------+
+| train_Default |          79.0      |       2105.0    |        98.57     |
+| valid_Default |          81.9      |       2147.4    |       100.71     |
++---------------+--------------------+-----------------+------------------+
+2026-02-24 11:07:35.000 INFO: Done

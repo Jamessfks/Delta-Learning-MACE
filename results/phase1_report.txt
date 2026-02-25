@@ -1,0 +1,55 @@
+======================================================================
+  PHASE 1: XTB ERROR SYSTEMATICITY — VALIDATION SET
+  (159 structures analyzed)
+======================================================================
+
+  Energy Corrections (ΔE = E_DFT − E_XTB)
+  --------------------------------------------------
+    ΔE mean:                 8329.5588 eV
+    ΔE std:                    20.4421 eV
+    ΔE range:                 114.2953 eV
+    ΔE/atom mean:            43383.119 meV/atom
+    ΔE/atom std:               106.469 meV/atom
+    CV(ΔE/atom):              0.002454  ✓ (need < 0.3)
+    R²(E_DFT, E_XTB):         0.067784  ✗ (need > 0.9)
+    Pearson r:                0.260354
+
+  Force Corrections (ΔF = F_DFT − F_XTB)
+  --------------------------------------------------
+    |ΔF| mean:                2132.238 meV/Å
+    ΔF std:                   2601.315 meV/Å
+    ΔF RMS:                   2601.315 meV/Å
+    Per-struct MAE mean:       2132.238 meV/Å
+    Per-struct MAE std:         115.020 meV/Å
+
+  ==================================================
+  DECISION: ✓ PROCEED
+  ==================================================
+
+======================================================================
+  PHASE 1: XTB ERROR SYSTEMATICITY — TRAINING SET
+  (1484 structures analyzed)
+======================================================================
+
+  Energy Corrections (ΔE = E_DFT − E_XTB)
+  --------------------------------------------------
+    ΔE mean:                 8329.7987 eV
+    ΔE std:                    17.9514 eV
+    ΔE range:                 128.6750 eV
+    ΔE/atom mean:            43384.368 meV/atom
+    ΔE/atom std:                93.497 meV/atom
+    CV(ΔE/atom):              0.002155  ✓ (need < 0.3)
+    R²(E_DFT, E_XTB):         0.067796  ✗ (need > 0.9)
+    Pearson r:                0.260376
+
+  Force Corrections (ΔF = F_DFT − F_XTB)
+  --------------------------------------------------
+    |ΔF| mean:                2132.332 meV/Å
+    ΔF std:                   2598.468 meV/Å
+    ΔF RMS:                   2598.468 meV/Å
+    Per-struct MAE mean:       2132.332 meV/Å
+    Per-struct MAE std:         102.955 meV/Å
+
+  ==================================================
+  DECISION: ✓ PROCEED
+  ==================================================

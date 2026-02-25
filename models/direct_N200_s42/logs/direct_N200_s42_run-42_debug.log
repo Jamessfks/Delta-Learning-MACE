@@ -1,0 +1,531 @@
+2026-02-24 13:37:15.625 INFO: ===========VERIFYING SETTINGS===========
+2026-02-24 13:37:15.625 INFO: MACE version: 0.3.14
+2026-02-24 13:37:15.625 DEBUG: Configuration: Namespace(config=None, name='direct_N200_s42', seed=42, work_dir='/home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42', log_dir='/home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/logs', model_dir='/home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42', checkpoints_dir='/home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints', results_dir='/home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/results', downloads_dir='/home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/downloads', device='cuda', default_dtype='float64', distributed=False, launcher='slurm', log_level='INFO', plot=True, plot_frequency=0, plot_interaction_e=False, error_table='PerAtomMAE', model='MACE', r_max=5.0, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', apply_cutoff=True, use_last_readout_only=False, use_embedding_readout=False, interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, use_reduced_cg=False, use_so3=False, use_agnostic_product=False, num_interactions=2, MLP_irreps='16x0e', radial_MLP='[64, 64, 64]', hidden_irreps='64x0e+64x1o', edge_irreps=None, num_channels=64, max_L=1, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, compute_polarizability=<function str2bool at 0xfd860b8d8f40>, compute_atomic_dipole=<function str2bool at 0xfd860b8d8f40>, train_file='/home/james/MACE-Helper/data/direct_N200_s42.xyz', valid_file='/home/james/MACE-Helper/data/valid_direct.xyz', valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, les_arguments=None, E0s='average', pseudolabel_replay=False, foundation_filter_elements=True, heads=None, multiheads_finetuning=True, foundation_head=None, weight_pt_head=1.0, real_pt_data_ratio_threshold=0.1, num_samples_pt=10000, force_mh_ft_lr=False, subselect_pt='random', filter_type_pt='none', allow_random_padding_pt=True, pt_train_file=None, pt_valid_file=None, foundation_model_elements=False, keep_isolated_atoms=False, energy_key='REF_energy', forces_key='REF_forces', virials_key='REF_virials', stress_key='REF_stress', dipole_key='dipole', polarizability_key='polarizability', head_key='head', charges_key='REF_charges', elec_temp_key='elec_temp', total_spin_key='total_spin', total_charge_key='total_charge', embedding_specs=None, skip_evaluate_heads='pt_head', loss='weighted', forces_weight=100.0, swa_forces_weight=10.0, energy_weight=1.0, swa_energy_weight=100.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipole_weight=1.0, swa_dipole_weight=1.0, swa_polarizability_weight=1.0, polarizability_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=4, valid_batch_size=10, lr=0.01, swa_lr=0.001, weight_decay=5e-07, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=True, start_swa=111, lbfgs=False, ema=True, ema_decay=0.99, max_num_epochs=150, patience=30, foundation_model=None, foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=False, save_cpu=False, clip_grad=10.0, dry_run=False, enable_cueq=False, only_cueq=False, enable_oeq=False, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'], key_specification=KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'}))
+2026-02-24 13:37:15.765 INFO: CUDA version: 13.0, CUDA device: 0
+2026-02-24 13:37:15.787 DEBUG: Popen(['git', 'version'], cwd=/home/james/MACE-Helper, stdin=None, shell=False, universal_newlines=False)
+2026-02-24 13:37:15.789 DEBUG: Popen(['git', 'version'], cwd=/home/james/MACE-Helper, stdin=None, shell=False, universal_newlines=False)
+2026-02-24 13:37:15.790 DEBUG: sys.platform='linux', git_executable='git'
+2026-02-24 13:37:15.791 DEBUG: Popen(['git', 'cat-file', '--batch-check'], cwd=/home/james/MACE-Helper, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-02-24 13:37:15.792 DEBUG: Current Git commit: b67a34373b2c9496342c7e68d6805c9be220955b
+2026-02-24 13:37:15.792 INFO: ===========LOADING INPUT DATA===========
+2026-02-24 13:37:15.792 INFO: Using heads: ['Default']
+2026-02-24 13:37:15.792 INFO: Using the key specifications to parse data:
+2026-02-24 13:37:15.792 INFO: Default: KeySpecification(info_keys={'energy': 'REF_energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'REF_forces', 'charges': 'REF_charges'})
+2026-02-24 13:37:15.792 INFO: =============    Processing head Default     ===========
+2026-02-24 13:37:15.792 DEBUG: Loading training file: /home/james/MACE-Helper/data/direct_N200_s42.xyz
+2026-02-24 13:37:15.863 INFO: Training set 1/1 [energy: 200, stress: 0, virials: 0, dipole components: 0, head: 200, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 200, charges: 0]
+2026-02-24 13:37:15.863 INFO: Total Training set [energy: 200, stress: 0, virials: 0, dipole components: 0, head: 200, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 200, charges: 0]
+2026-02-24 13:37:15.919 INFO: Validation set 1/1 [energy: 159, stress: 0, virials: 0, dipole components: 0, head: 159, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 159, charges: 0]
+2026-02-24 13:37:15.919 INFO: Total Validation set [energy: 159, stress: 0, virials: 0, dipole components: 0, head: 159, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 159, charges: 0]
+2026-02-24 13:37:15.919 INFO: Total number of configurations: train=200, valid=159, tests=[],
+2026-02-24 13:37:15.922 INFO: Atomic Numbers used: [np.int64(1), np.int64(8)]
+2026-02-24 13:37:15.922 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-02-24 13:37:15.922 INFO: Computing average Atomic Energies using least squares regression
+2026-02-24 13:37:15.923 INFO: Atomic Energies used (z: eV) for head Default: {1: -6.894136999999997, 8: -3.4470684999999954}
+2026-02-24 13:37:15.923 INFO: Processing datasets for head 'Default'
+2026-02-24 13:37:15.970 DEBUG: Successfully loaded dataset from ASE files: ['/home/james/MACE-Helper/data/direct_N200_s42.xyz']
+2026-02-24 13:37:15.971 INFO: Combining 1 list datasets for head 'Default'
+2026-02-24 13:37:16.008 DEBUG: Successfully loaded validation dataset from ASE files: ['/home/james/MACE-Helper/data/valid_direct.xyz']
+2026-02-24 13:37:16.008 INFO: Combining 1 list datasets for head 'Default_valid'
+2026-02-24 13:37:16.008 INFO: Combined validation datasets for Default
+2026-02-24 13:37:16.008 INFO: Head 'Default' training dataset size: 200
+2026-02-24 13:37:16.008 INFO: Computing average number of neighbors
+2026-02-24 13:37:16.221 INFO: Average number of neighbors: 5.570729166666666
+2026-02-24 13:37:16.221 INFO: During training the following quantities will be reported: energy, forces
+2026-02-24 13:37:16.221 INFO: ===========MODEL DETAILS===========
+2026-02-24 13:37:16.265 INFO: Building model
+2026-02-24 13:37:16.265 INFO: Message passing with 64 channels and max_L=1 (64x0e+64x1o)
+2026-02-24 13:37:16.265 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-02-24 13:37:16.265 INFO: 8 radial and 5 basis functions
+2026-02-24 13:37:16.265 INFO: Radial cutoff: 5.0 A (total receptive field for each atom: 10.0 A)
+2026-02-24 13:37:16.265 INFO: Distance transform for radial basis functions: None
+2026-02-24 13:37:16.265 INFO: Hidden irreps: 64x0e+64x1o
+2026-02-24 13:37:16.773 DEBUG: ScaleShiftMACE(
+  (node_embedding): LinearNodeEmbeddingBlock(
+    (linear): Linear(2x0e -> 64x0e | 128 weights)
+  )
+  (radial_embedding): RadialEmbeddingBlock(
+    (bessel_fn): BesselBasis(r_max=5.0, num_basis=8, trainable=False)
+    (cutoff_fn): PolynomialCutoff(p=5, r_max=5.0)
+  )
+  (spherical_harmonics): SphericalHarmonics()
+  (atomic_energies_fn): AtomicEnergiesBlock(energies=[[-6.8941, -3.4471]])
+  (interactions): ModuleList(
+    (0): RealAgnosticInteractionBlock(
+      (linear_up): Linear(64x0e -> 64x0e | 4096 weights)
+      (conv_tp): TensorProduct(64x0e x 1x0e+1x1o+1x2e+1x3o -> 64x0e+64x1o+64x2e+64x3o | 256 paths | 256 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 256]
+      (linear): Linear(64x0e+64x1o+64x2e+64x3o -> 64x0e+64x1o+64x2e+64x3o | 16384 weights)
+      (skip_tp): FullyConnectedTensorProduct(64x0e+64x1o+64x2e+64x3o x 2x0e -> 64x0e+64x1o+64x2e+64x3o | 32768 paths | 32768 weights)
+      (reshape): reshape_irreps()
+    )
+    (1): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(64x0e+64x1o -> 64x0e+64x1o | 8192 weights)
+      (conv_tp): TensorProduct(64x0e+64x1o x 1x0e+1x1o+1x2e+1x3o -> 128x0e+192x1o+192x2e+128x3o | 640 paths | 640 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 640]
+      (linear): Linear(64x0e+64x0e+64x1o+64x1o+64x1o+64x2e+64x2e+64x2e+64x3o+64x3o -> 64x0e+64x1o+64x2e+64x3o | 40960 weights)
+      (skip_tp): FullyConnectedTensorProduct(64x0e+64x1o x 2x0e -> 64x0e | 8192 paths | 8192 weights)
+      (reshape): reshape_irreps()
+    )
+  )
+  (products): ModuleList(
+    (0): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 2x4x64 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 2x1x64 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (1): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 2x6x64 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 2x1x64 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(64x0e+64x1o -> 64x0e+64x1o | 8192 weights)
+    )
+    (1): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 2x4x64 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 2x1x64 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(64x0e -> 64x0e | 4096 weights)
+    )
+  )
+  (readouts): ModuleList(
+    (0): LinearReadoutBlock(
+      (linear): Linear(64x0e+64x1o -> 1x0e | 64 weights)
+    )
+    (1): NonLinearReadoutBlock(
+      (linear_1): Linear(64x0e -> 16x0e | 1024 weights)
+      (non_linearity): Activation [x] (16x0e -> 16x0e)
+      (linear_2): Linear(16x0e -> 1x0e | 16 weights)
+    )
+  )
+  (scale_shift): ScaleShiftBlock(scale=0.0443, shift=0.0000)
+)
+2026-02-24 13:37:16.774 INFO: Total number of parameters: 213456
+2026-02-24 13:37:16.774 INFO: 
+2026-02-24 13:37:16.774 INFO: ===========OPTIMIZER INFORMATION===========
+2026-02-24 13:37:16.774 INFO: Using ADAM as parameter optimizer
+2026-02-24 13:37:16.774 INFO: Batch size: 4
+2026-02-24 13:37:16.774 INFO: Using Exponential Moving Average with decay: 0.99
+2026-02-24 13:37:16.774 INFO: Number of gradient updates: 7500
+2026-02-24 13:37:16.774 INFO: Learning rate: 0.01, weight decay: 5e-07
+2026-02-24 13:37:16.774 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=100.000)
+2026-02-24 13:37:16.774 INFO: Stage Two (after 111 epochs) with loss function: WeightedEnergyForcesLoss(energy_weight=100.000, forces_weight=10.000), with energy weight : 100.0, forces weight : 10.0 and learning rate : 0.001
+2026-02-24 13:37:16.949 INFO: Using gradient clipping with tolerance=10.000
+2026-02-24 13:37:16.949 INFO: 
+2026-02-24 13:37:16.949 INFO: ===========TRAINING===========
+2026-02-24 13:37:16.949 INFO: Started training, reporting errors on validation set
+2026-02-24 13:37:16.949 INFO: Loss metrics on validation set
+2026-02-24 13:37:22.438 INFO: Initial: head: Default, loss=0.02074340, MAE_E_per_atom=    2.45 meV, MAE_F=   28.78 meV / A
+2026-02-24 13:37:42.543 INFO: Epoch 0: head: Default, loss=0.00160063, MAE_E_per_atom=   28.29 meV, MAE_F=    8.12 meV / A
+2026-02-24 13:37:42.544 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-0.pt
+2026-02-24 13:38:01.029 INFO: Epoch 1: head: Default, loss=0.00108670, MAE_E_per_atom=   34.50 meV, MAE_F=    5.75 meV / A
+2026-02-24 13:38:01.030 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-0.pt
+2026-02-24 13:38:01.031 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-1.pt
+2026-02-24 13:38:19.498 INFO: Epoch 2: head: Default, loss=0.00088096, MAE_E_per_atom=   33.82 meV, MAE_F=    4.83 meV / A
+2026-02-24 13:38:19.499 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-1.pt
+2026-02-24 13:38:19.500 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-2.pt
+2026-02-24 13:38:37.964 INFO: Epoch 3: head: Default, loss=0.00106687, MAE_E_per_atom=   31.03 meV, MAE_F=    4.34 meV / A
+2026-02-24 13:38:56.356 INFO: Epoch 4: head: Default, loss=0.00085034, MAE_E_per_atom=   29.85 meV, MAE_F=    4.61 meV / A
+2026-02-24 13:38:56.357 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-2.pt
+2026-02-24 13:38:56.358 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-4.pt
+2026-02-24 13:39:14.814 INFO: Epoch 5: head: Default, loss=0.00075549, MAE_E_per_atom=   29.05 meV, MAE_F=    4.23 meV / A
+2026-02-24 13:39:14.815 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-4.pt
+2026-02-24 13:39:14.816 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-5.pt
+2026-02-24 13:39:33.217 INFO: Epoch 6: head: Default, loss=0.00071299, MAE_E_per_atom=   27.32 meV, MAE_F=    4.14 meV / A
+2026-02-24 13:39:33.218 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-5.pt
+2026-02-24 13:39:33.219 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-6.pt
+2026-02-24 13:39:51.606 INFO: Epoch 7: head: Default, loss=0.00068458, MAE_E_per_atom=   26.08 meV, MAE_F=    4.06 meV / A
+2026-02-24 13:39:51.607 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-6.pt
+2026-02-24 13:39:51.608 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-7.pt
+2026-02-24 13:40:09.990 INFO: Epoch 8: head: Default, loss=0.00066021, MAE_E_per_atom=   24.63 meV, MAE_F=    4.00 meV / A
+2026-02-24 13:40:09.991 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-7.pt
+2026-02-24 13:40:09.992 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-8.pt
+2026-02-24 13:40:28.382 INFO: Epoch 9: head: Default, loss=0.00063763, MAE_E_per_atom=   24.01 meV, MAE_F=    3.95 meV / A
+2026-02-24 13:40:28.383 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-8.pt
+2026-02-24 13:40:28.384 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-9.pt
+2026-02-24 13:40:46.842 INFO: Epoch 10: head: Default, loss=0.00061346, MAE_E_per_atom=   22.92 meV, MAE_F=    3.91 meV / A
+2026-02-24 13:40:46.843 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-9.pt
+2026-02-24 13:40:46.844 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-10.pt
+2026-02-24 13:41:05.311 INFO: Epoch 11: head: Default, loss=0.00058726, MAE_E_per_atom=   22.45 meV, MAE_F=    3.87 meV / A
+2026-02-24 13:41:05.312 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-10.pt
+2026-02-24 13:41:05.313 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-11.pt
+2026-02-24 13:41:23.780 INFO: Epoch 12: head: Default, loss=0.00055364, MAE_E_per_atom=   21.09 meV, MAE_F=    3.77 meV / A
+2026-02-24 13:41:23.781 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-11.pt
+2026-02-24 13:41:23.782 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-12.pt
+2026-02-24 13:41:42.264 INFO: Epoch 13: head: Default, loss=0.00051577, MAE_E_per_atom=   19.86 meV, MAE_F=    3.68 meV / A
+2026-02-24 13:41:42.264 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-12.pt
+2026-02-24 13:41:42.266 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-13.pt
+2026-02-24 13:42:00.733 INFO: Epoch 14: head: Default, loss=0.00047882, MAE_E_per_atom=   18.13 meV, MAE_F=    3.62 meV / A
+2026-02-24 13:42:00.734 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-13.pt
+2026-02-24 13:42:00.735 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-14.pt
+2026-02-24 13:42:19.195 INFO: Epoch 15: head: Default, loss=0.00044101, MAE_E_per_atom=   16.06 meV, MAE_F=    3.57 meV / A
+2026-02-24 13:42:19.196 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-14.pt
+2026-02-24 13:42:19.197 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-15.pt
+2026-02-24 13:42:37.678 INFO: Epoch 16: head: Default, loss=0.00040972, MAE_E_per_atom=   14.64 meV, MAE_F=    3.50 meV / A
+2026-02-24 13:42:37.678 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-15.pt
+2026-02-24 13:42:37.679 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-16.pt
+2026-02-24 13:42:56.135 INFO: Epoch 17: head: Default, loss=0.00038406, MAE_E_per_atom=   13.06 meV, MAE_F=    3.42 meV / A
+2026-02-24 13:42:56.136 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-16.pt
+2026-02-24 13:42:56.138 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-17.pt
+2026-02-24 13:43:14.611 INFO: Epoch 18: head: Default, loss=0.00036168, MAE_E_per_atom=   11.97 meV, MAE_F=    3.34 meV / A
+2026-02-24 13:43:14.611 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-17.pt
+2026-02-24 13:43:14.612 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-18.pt
+2026-02-24 13:43:33.091 INFO: Epoch 19: head: Default, loss=0.00034590, MAE_E_per_atom=   10.67 meV, MAE_F=    3.27 meV / A
+2026-02-24 13:43:33.092 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-18.pt
+2026-02-24 13:43:33.092 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-19.pt
+2026-02-24 13:43:51.559 INFO: Epoch 20: head: Default, loss=0.00033064, MAE_E_per_atom=    9.72 meV, MAE_F=    3.21 meV / A
+2026-02-24 13:43:51.560 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-19.pt
+2026-02-24 13:43:51.561 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-20.pt
+2026-02-24 13:44:10.031 INFO: Epoch 21: head: Default, loss=0.00031671, MAE_E_per_atom=    8.70 meV, MAE_F=    3.16 meV / A
+2026-02-24 13:44:10.031 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-20.pt
+2026-02-24 13:44:10.033 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-21.pt
+2026-02-24 13:44:28.503 INFO: Epoch 22: head: Default, loss=0.00030651, MAE_E_per_atom=    7.47 meV, MAE_F=    3.11 meV / A
+2026-02-24 13:44:28.504 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-21.pt
+2026-02-24 13:44:28.515 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-22.pt
+2026-02-24 13:44:46.961 INFO: Epoch 23: head: Default, loss=0.00029589, MAE_E_per_atom=    6.97 meV, MAE_F=    3.07 meV / A
+2026-02-24 13:44:46.962 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-22.pt
+2026-02-24 13:44:46.963 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-23.pt
+2026-02-24 13:45:05.429 INFO: Epoch 24: head: Default, loss=0.00028857, MAE_E_per_atom=    6.62 meV, MAE_F=    3.03 meV / A
+2026-02-24 13:45:05.430 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-23.pt
+2026-02-24 13:45:05.431 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-24.pt
+2026-02-24 13:45:23.890 INFO: Epoch 25: head: Default, loss=0.00027811, MAE_E_per_atom=    5.78 meV, MAE_F=    2.99 meV / A
+2026-02-24 13:45:23.891 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-24.pt
+2026-02-24 13:45:23.892 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-25.pt
+2026-02-24 13:45:42.365 INFO: Epoch 26: head: Default, loss=0.00026814, MAE_E_per_atom=    5.03 meV, MAE_F=    2.95 meV / A
+2026-02-24 13:45:42.366 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-25.pt
+2026-02-24 13:45:42.368 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-26.pt
+2026-02-24 13:46:00.849 INFO: Epoch 27: head: Default, loss=0.00025817, MAE_E_per_atom=    4.31 meV, MAE_F=    2.91 meV / A
+2026-02-24 13:46:00.850 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-26.pt
+2026-02-24 13:46:00.851 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-27.pt
+2026-02-24 13:46:19.338 INFO: Epoch 28: head: Default, loss=0.00024778, MAE_E_per_atom=    3.87 meV, MAE_F=    2.86 meV / A
+2026-02-24 13:46:19.339 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-27.pt
+2026-02-24 13:46:19.340 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-28.pt
+2026-02-24 13:46:37.842 INFO: Epoch 29: head: Default, loss=0.00023773, MAE_E_per_atom=    3.49 meV, MAE_F=    2.81 meV / A
+2026-02-24 13:46:37.843 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-28.pt
+2026-02-24 13:46:37.844 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-29.pt
+2026-02-24 13:46:56.314 INFO: Epoch 30: head: Default, loss=0.00022961, MAE_E_per_atom=    3.28 meV, MAE_F=    2.77 meV / A
+2026-02-24 13:46:56.314 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-29.pt
+2026-02-24 13:46:56.316 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-30.pt
+2026-02-24 13:47:14.811 INFO: Epoch 31: head: Default, loss=0.00022268, MAE_E_per_atom=    3.15 meV, MAE_F=    2.73 meV / A
+2026-02-24 13:47:14.812 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-30.pt
+2026-02-24 13:47:14.813 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-31.pt
+2026-02-24 13:47:33.235 INFO: Epoch 32: head: Default, loss=0.00021715, MAE_E_per_atom=    2.85 meV, MAE_F=    2.71 meV / A
+2026-02-24 13:47:33.236 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-31.pt
+2026-02-24 13:47:33.237 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-32.pt
+2026-02-24 13:47:51.654 INFO: Epoch 33: head: Default, loss=0.00021375, MAE_E_per_atom=    2.53 meV, MAE_F=    2.68 meV / A
+2026-02-24 13:47:51.655 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-32.pt
+2026-02-24 13:47:51.657 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-33.pt
+2026-02-24 13:48:10.079 INFO: Epoch 34: head: Default, loss=0.00020775, MAE_E_per_atom=    2.48 meV, MAE_F=    2.65 meV / A
+2026-02-24 13:48:10.080 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-33.pt
+2026-02-24 13:48:10.081 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-34.pt
+2026-02-24 13:48:28.503 INFO: Epoch 35: head: Default, loss=0.00020295, MAE_E_per_atom=    2.22 meV, MAE_F=    2.63 meV / A
+2026-02-24 13:48:28.503 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-34.pt
+2026-02-24 13:48:28.505 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-35.pt
+2026-02-24 13:48:46.991 INFO: Epoch 36: head: Default, loss=0.00020593, MAE_E_per_atom=    3.68 meV, MAE_F=    2.64 meV / A
+2026-02-24 13:49:05.415 INFO: Epoch 37: head: Default, loss=0.00020589, MAE_E_per_atom=    3.02 meV, MAE_F=    2.64 meV / A
+2026-02-24 13:49:23.834 INFO: Epoch 38: head: Default, loss=0.00020296, MAE_E_per_atom=    2.61 meV, MAE_F=    2.61 meV / A
+2026-02-24 13:49:42.240 INFO: Epoch 39: head: Default, loss=0.00020009, MAE_E_per_atom=    2.44 meV, MAE_F=    2.59 meV / A
+2026-02-24 13:49:42.241 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-35.pt
+2026-02-24 13:49:42.242 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-39.pt
+2026-02-24 13:50:00.679 INFO: Epoch 40: head: Default, loss=0.00019692, MAE_E_per_atom=    2.18 meV, MAE_F=    2.57 meV / A
+2026-02-24 13:50:00.680 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-39.pt
+2026-02-24 13:50:00.681 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-40.pt
+2026-02-24 13:50:19.117 INFO: Epoch 41: head: Default, loss=0.00019368, MAE_E_per_atom=    1.94 meV, MAE_F=    2.56 meV / A
+2026-02-24 13:50:19.118 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-40.pt
+2026-02-24 13:50:19.119 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-41.pt
+2026-02-24 13:50:37.595 INFO: Epoch 42: head: Default, loss=0.00019126, MAE_E_per_atom=    1.85 meV, MAE_F=    2.54 meV / A
+2026-02-24 13:50:37.596 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-41.pt
+2026-02-24 13:50:37.597 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-42.pt
+2026-02-24 13:50:56.059 INFO: Epoch 43: head: Default, loss=0.00018959, MAE_E_per_atom=    1.77 meV, MAE_F=    2.53 meV / A
+2026-02-24 13:50:56.060 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-42.pt
+2026-02-24 13:50:56.061 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-43.pt
+2026-02-24 13:51:14.524 INFO: Epoch 44: head: Default, loss=0.00018642, MAE_E_per_atom=    1.50 meV, MAE_F=    2.51 meV / A
+2026-02-24 13:51:14.525 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-43.pt
+2026-02-24 13:51:14.527 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-44.pt
+2026-02-24 13:51:33.018 INFO: Epoch 45: head: Default, loss=0.00018493, MAE_E_per_atom=    1.57 meV, MAE_F=    2.50 meV / A
+2026-02-24 13:51:33.019 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-44.pt
+2026-02-24 13:51:33.020 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-45.pt
+2026-02-24 13:51:51.504 INFO: Epoch 46: head: Default, loss=0.00018173, MAE_E_per_atom=    1.55 meV, MAE_F=    2.49 meV / A
+2026-02-24 13:51:51.505 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-45.pt
+2026-02-24 13:51:51.507 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-46.pt
+2026-02-24 13:52:09.925 INFO: Epoch 47: head: Default, loss=0.00018014, MAE_E_per_atom=    1.38 meV, MAE_F=    2.48 meV / A
+2026-02-24 13:52:09.926 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-46.pt
+2026-02-24 13:52:09.928 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-47.pt
+2026-02-24 13:52:28.358 INFO: Epoch 48: head: Default, loss=0.00018206, MAE_E_per_atom=    1.20 meV, MAE_F=    2.48 meV / A
+2026-02-24 13:52:46.789 INFO: Epoch 49: head: Default, loss=0.00017847, MAE_E_per_atom=    0.99 meV, MAE_F=    2.46 meV / A
+2026-02-24 13:52:46.790 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-47.pt
+2026-02-24 13:52:46.791 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-49.pt
+2026-02-24 13:53:05.259 INFO: Epoch 50: head: Default, loss=0.00017652, MAE_E_per_atom=    1.16 meV, MAE_F=    2.45 meV / A
+2026-02-24 13:53:05.260 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-49.pt
+2026-02-24 13:53:05.261 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-50.pt
+2026-02-24 13:53:23.749 INFO: Epoch 51: head: Default, loss=0.00017481, MAE_E_per_atom=    1.11 meV, MAE_F=    2.44 meV / A
+2026-02-24 13:53:23.750 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-50.pt
+2026-02-24 13:53:23.751 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-51.pt
+2026-02-24 13:53:42.237 INFO: Epoch 52: head: Default, loss=0.00017401, MAE_E_per_atom=    1.17 meV, MAE_F=    2.43 meV / A
+2026-02-24 13:53:42.238 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-51.pt
+2026-02-24 13:53:42.239 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-52.pt
+2026-02-24 13:54:00.729 INFO: Epoch 53: head: Default, loss=0.00017340, MAE_E_per_atom=    1.17 meV, MAE_F=    2.43 meV / A
+2026-02-24 13:54:00.730 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-52.pt
+2026-02-24 13:54:00.731 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-53.pt
+2026-02-24 13:54:19.188 INFO: Epoch 54: head: Default, loss=0.00017198, MAE_E_per_atom=    1.09 meV, MAE_F=    2.42 meV / A
+2026-02-24 13:54:19.189 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-53.pt
+2026-02-24 13:54:19.190 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-54.pt
+2026-02-24 13:54:37.656 INFO: Epoch 55: head: Default, loss=0.00017078, MAE_E_per_atom=    1.02 meV, MAE_F=    2.41 meV / A
+2026-02-24 13:54:37.657 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-54.pt
+2026-02-24 13:54:37.658 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-55.pt
+2026-02-24 13:54:56.127 INFO: Epoch 56: head: Default, loss=0.00016919, MAE_E_per_atom=    0.97 meV, MAE_F=    2.40 meV / A
+2026-02-24 13:54:56.128 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-55.pt
+2026-02-24 13:54:56.129 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-56.pt
+2026-02-24 13:55:14.581 INFO: Epoch 57: head: Default, loss=0.00016834, MAE_E_per_atom=    0.85 meV, MAE_F=    2.40 meV / A
+2026-02-24 13:55:14.582 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-56.pt
+2026-02-24 13:55:14.584 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-57.pt
+2026-02-24 13:55:33.059 INFO: Epoch 58: head: Default, loss=0.00016760, MAE_E_per_atom=    0.85 meV, MAE_F=    2.39 meV / A
+2026-02-24 13:55:33.060 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-57.pt
+2026-02-24 13:55:33.061 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-58.pt
+2026-02-24 13:55:51.520 INFO: Epoch 59: head: Default, loss=0.00016698, MAE_E_per_atom=    0.97 meV, MAE_F=    2.39 meV / A
+2026-02-24 13:55:51.520 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-58.pt
+2026-02-24 13:55:51.522 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-59.pt
+2026-02-24 13:56:09.971 INFO: Epoch 60: head: Default, loss=0.00016645, MAE_E_per_atom=    0.85 meV, MAE_F=    2.38 meV / A
+2026-02-24 13:56:09.972 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-59.pt
+2026-02-24 13:56:09.974 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-60.pt
+2026-02-24 13:56:28.363 INFO: Epoch 61: head: Default, loss=0.00016577, MAE_E_per_atom=    0.77 meV, MAE_F=    2.38 meV / A
+2026-02-24 13:56:28.363 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-60.pt
+2026-02-24 13:56:28.364 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-61.pt
+2026-02-24 13:56:46.779 INFO: Epoch 62: head: Default, loss=0.00016476, MAE_E_per_atom=    0.81 meV, MAE_F=    2.37 meV / A
+2026-02-24 13:56:46.780 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-61.pt
+2026-02-24 13:56:46.782 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-62.pt
+2026-02-24 13:57:05.212 INFO: Epoch 63: head: Default, loss=0.00016409, MAE_E_per_atom=    0.90 meV, MAE_F=    2.37 meV / A
+2026-02-24 13:57:05.212 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-62.pt
+2026-02-24 13:57:05.214 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-63.pt
+2026-02-24 13:57:23.624 INFO: Epoch 64: head: Default, loss=0.00016424, MAE_E_per_atom=    0.82 meV, MAE_F=    2.37 meV / A
+2026-02-24 13:57:42.006 INFO: Epoch 65: head: Default, loss=0.00016320, MAE_E_per_atom=    0.85 meV, MAE_F=    2.37 meV / A
+2026-02-24 13:57:42.007 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-63.pt
+2026-02-24 13:57:42.008 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-65.pt
+2026-02-24 13:58:00.412 INFO: Epoch 66: head: Default, loss=0.00016211, MAE_E_per_atom=    0.66 meV, MAE_F=    2.36 meV / A
+2026-02-24 13:58:00.413 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-65.pt
+2026-02-24 13:58:00.414 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-66.pt
+2026-02-24 13:58:18.815 INFO: Epoch 67: head: Default, loss=0.00016212, MAE_E_per_atom=    0.72 meV, MAE_F=    2.36 meV / A
+2026-02-24 13:58:37.193 INFO: Epoch 68: head: Default, loss=0.00016671, MAE_E_per_atom=    0.53 meV, MAE_F=    2.36 meV / A
+2026-02-24 13:58:55.609 INFO: Epoch 69: head: Default, loss=0.00016228, MAE_E_per_atom=    0.62 meV, MAE_F=    2.35 meV / A
+2026-02-24 13:59:14.034 INFO: Epoch 70: head: Default, loss=0.00016006, MAE_E_per_atom=    0.54 meV, MAE_F=    2.34 meV / A
+2026-02-24 13:59:14.035 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-66.pt
+2026-02-24 13:59:14.036 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-70.pt
+2026-02-24 13:59:32.486 INFO: Epoch 71: head: Default, loss=0.00015933, MAE_E_per_atom=    0.51 meV, MAE_F=    2.34 meV / A
+2026-02-24 13:59:32.487 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-70.pt
+2026-02-24 13:59:32.489 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-71.pt
+2026-02-24 13:59:50.968 INFO: Epoch 72: head: Default, loss=0.00015836, MAE_E_per_atom=    0.56 meV, MAE_F=    2.33 meV / A
+2026-02-24 13:59:50.969 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-71.pt
+2026-02-24 13:59:50.970 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-72.pt
+2026-02-24 14:00:09.410 INFO: Epoch 73: head: Default, loss=0.00015830, MAE_E_per_atom=    0.69 meV, MAE_F=    2.33 meV / A
+2026-02-24 14:00:09.411 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-72.pt
+2026-02-24 14:00:09.421 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-73.pt
+2026-02-24 14:00:27.883 INFO: Epoch 74: head: Default, loss=0.00015801, MAE_E_per_atom=    0.60 meV, MAE_F=    2.33 meV / A
+2026-02-24 14:00:27.884 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-73.pt
+2026-02-24 14:00:27.885 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-74.pt
+2026-02-24 14:00:46.355 INFO: Epoch 75: head: Default, loss=0.00015749, MAE_E_per_atom=    0.81 meV, MAE_F=    2.32 meV / A
+2026-02-24 14:00:46.356 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-74.pt
+2026-02-24 14:00:46.357 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-75.pt
+2026-02-24 14:01:04.810 INFO: Epoch 76: head: Default, loss=0.00015781, MAE_E_per_atom=    0.64 meV, MAE_F=    2.32 meV / A
+2026-02-24 14:01:23.189 INFO: Epoch 77: head: Default, loss=0.00015724, MAE_E_per_atom=    0.72 meV, MAE_F=    2.32 meV / A
+2026-02-24 14:01:23.190 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-75.pt
+2026-02-24 14:01:23.191 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-77.pt
+2026-02-24 14:01:41.646 INFO: Epoch 78: head: Default, loss=0.00015689, MAE_E_per_atom=    0.65 meV, MAE_F=    2.31 meV / A
+2026-02-24 14:01:41.647 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-77.pt
+2026-02-24 14:01:41.648 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-78.pt
+2026-02-24 14:02:00.119 INFO: Epoch 79: head: Default, loss=0.00015646, MAE_E_per_atom=    0.68 meV, MAE_F=    2.31 meV / A
+2026-02-24 14:02:00.120 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-78.pt
+2026-02-24 14:02:00.121 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-79.pt
+2026-02-24 14:02:18.577 INFO: Epoch 80: head: Default, loss=0.00015628, MAE_E_per_atom=    0.50 meV, MAE_F=    2.31 meV / A
+2026-02-24 14:02:18.578 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-79.pt
+2026-02-24 14:02:18.579 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-80.pt
+2026-02-24 14:02:37.019 INFO: Epoch 81: head: Default, loss=0.00015549, MAE_E_per_atom=    0.58 meV, MAE_F=    2.30 meV / A
+2026-02-24 14:02:37.020 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-80.pt
+2026-02-24 14:02:37.021 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-81.pt
+2026-02-24 14:02:55.496 INFO: Epoch 82: head: Default, loss=0.00015521, MAE_E_per_atom=    0.61 meV, MAE_F=    2.30 meV / A
+2026-02-24 14:02:55.497 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-81.pt
+2026-02-24 14:02:55.498 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-82.pt
+2026-02-24 14:03:13.944 INFO: Epoch 83: head: Default, loss=0.00015466, MAE_E_per_atom=    0.49 meV, MAE_F=    2.30 meV / A
+2026-02-24 14:03:13.945 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-82.pt
+2026-02-24 14:03:13.946 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-83.pt
+2026-02-24 14:03:32.414 INFO: Epoch 84: head: Default, loss=0.00015324, MAE_E_per_atom=    0.54 meV, MAE_F=    2.29 meV / A
+2026-02-24 14:03:32.415 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-83.pt
+2026-02-24 14:03:32.416 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-84.pt
+2026-02-24 14:03:50.888 INFO: Epoch 85: head: Default, loss=0.00015316, MAE_E_per_atom=    0.70 meV, MAE_F=    2.29 meV / A
+2026-02-24 14:03:50.889 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-84.pt
+2026-02-24 14:03:50.890 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-85.pt
+2026-02-24 14:04:09.355 INFO: Epoch 86: head: Default, loss=0.00015351, MAE_E_per_atom=    0.56 meV, MAE_F=    2.29 meV / A
+2026-02-24 14:04:27.739 INFO: Epoch 87: head: Default, loss=0.00015254, MAE_E_per_atom=    0.65 meV, MAE_F=    2.28 meV / A
+2026-02-24 14:04:27.740 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-85.pt
+2026-02-24 14:04:27.741 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-87.pt
+2026-02-24 14:04:46.188 INFO: Epoch 88: head: Default, loss=0.00015209, MAE_E_per_atom=    0.50 meV, MAE_F=    2.28 meV / A
+2026-02-24 14:04:46.189 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-87.pt
+2026-02-24 14:04:46.190 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-88.pt
+2026-02-24 14:05:04.629 INFO: Epoch 89: head: Default, loss=0.00015154, MAE_E_per_atom=    0.58 meV, MAE_F=    2.27 meV / A
+2026-02-24 14:05:04.630 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-88.pt
+2026-02-24 14:05:04.631 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-89.pt
+2026-02-24 14:05:23.090 INFO: Epoch 90: head: Default, loss=0.00015101, MAE_E_per_atom=    0.47 meV, MAE_F=    2.27 meV / A
+2026-02-24 14:05:23.091 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-89.pt
+2026-02-24 14:05:23.093 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-90.pt
+2026-02-24 14:05:41.495 INFO: Epoch 91: head: Default, loss=0.00015017, MAE_E_per_atom=    0.49 meV, MAE_F=    2.26 meV / A
+2026-02-24 14:05:41.496 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-90.pt
+2026-02-24 14:05:41.497 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-91.pt
+2026-02-24 14:05:59.900 INFO: Epoch 92: head: Default, loss=0.00015034, MAE_E_per_atom=    0.45 meV, MAE_F=    2.26 meV / A
+2026-02-24 14:06:18.287 INFO: Epoch 93: head: Default, loss=0.00015057, MAE_E_per_atom=    0.46 meV, MAE_F=    2.26 meV / A
+2026-02-24 14:06:36.677 INFO: Epoch 94: head: Default, loss=0.00015042, MAE_E_per_atom=    0.41 meV, MAE_F=    2.25 meV / A
+2026-02-24 14:06:55.071 INFO: Epoch 95: head: Default, loss=0.00014960, MAE_E_per_atom=    0.51 meV, MAE_F=    2.25 meV / A
+2026-02-24 14:06:55.072 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-91.pt
+2026-02-24 14:06:55.073 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-95.pt
+2026-02-24 14:07:13.503 INFO: Epoch 96: head: Default, loss=0.00014941, MAE_E_per_atom=    0.42 meV, MAE_F=    2.25 meV / A
+2026-02-24 14:07:13.504 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-95.pt
+2026-02-24 14:07:13.505 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-96.pt
+2026-02-24 14:07:31.968 INFO: Epoch 97: head: Default, loss=0.00014935, MAE_E_per_atom=    0.48 meV, MAE_F=    2.24 meV / A
+2026-02-24 14:07:31.969 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-96.pt
+2026-02-24 14:07:31.971 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-97.pt
+2026-02-24 14:07:50.417 INFO: Epoch 98: head: Default, loss=0.00014980, MAE_E_per_atom=    0.44 meV, MAE_F=    2.24 meV / A
+2026-02-24 14:08:08.786 INFO: Epoch 99: head: Default, loss=0.00014915, MAE_E_per_atom=    0.59 meV, MAE_F=    2.24 meV / A
+2026-02-24 14:08:08.787 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-97.pt
+2026-02-24 14:08:08.788 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-99.pt
+2026-02-24 14:08:27.225 INFO: Epoch 100: head: Default, loss=0.00014917, MAE_E_per_atom=    0.51 meV, MAE_F=    2.24 meV / A
+2026-02-24 14:08:45.604 INFO: Epoch 101: head: Default, loss=0.00014900, MAE_E_per_atom=    0.51 meV, MAE_F=    2.24 meV / A
+2026-02-24 14:08:45.605 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-99.pt
+2026-02-24 14:08:45.606 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-101.pt
+2026-02-24 14:09:04.063 INFO: Epoch 102: head: Default, loss=0.00014916, MAE_E_per_atom=    0.44 meV, MAE_F=    2.23 meV / A
+2026-02-24 14:09:22.446 INFO: Epoch 103: head: Default, loss=0.00014870, MAE_E_per_atom=    0.55 meV, MAE_F=    2.23 meV / A
+2026-02-24 14:09:22.447 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-101.pt
+2026-02-24 14:09:22.448 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-103.pt
+2026-02-24 14:09:40.890 INFO: Epoch 104: head: Default, loss=0.00014798, MAE_E_per_atom=    0.40 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:09:40.891 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-103.pt
+2026-02-24 14:09:40.892 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-104.pt
+2026-02-24 14:09:59.356 INFO: Epoch 105: head: Default, loss=0.00014812, MAE_E_per_atom=    0.39 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:10:17.725 INFO: Epoch 106: head: Default, loss=0.00014700, MAE_E_per_atom=    0.34 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:10:17.726 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-104.pt
+2026-02-24 14:10:17.727 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-106.pt
+2026-02-24 14:10:36.184 INFO: Epoch 107: head: Default, loss=0.00014642, MAE_E_per_atom=    0.37 meV, MAE_F=    2.21 meV / A
+2026-02-24 14:10:36.185 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-106.pt
+2026-02-24 14:10:36.186 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-107.pt
+2026-02-24 14:10:54.662 INFO: Epoch 108: head: Default, loss=0.00014602, MAE_E_per_atom=    0.31 meV, MAE_F=    2.21 meV / A
+2026-02-24 14:10:54.663 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-107.pt
+2026-02-24 14:10:54.664 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-108.pt
+2026-02-24 14:11:13.127 INFO: Epoch 109: head: Default, loss=0.00014610, MAE_E_per_atom=    0.42 meV, MAE_F=    2.21 meV / A
+2026-02-24 14:11:31.519 INFO: Epoch 110: head: Default, loss=0.00014561, MAE_E_per_atom=    0.33 meV, MAE_F=    2.21 meV / A
+2026-02-24 14:11:31.520 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-108.pt
+2026-02-24 14:11:31.521 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-110.pt
+2026-02-24 14:11:31.565 INFO: Changing loss based on Stage Two Weights
+2026-02-24 14:11:49.959 INFO: Epoch 111: head: Default, loss=0.00001571, MAE_E_per_atom=    0.23 meV, MAE_F=    2.21 meV / A
+2026-02-24 14:11:49.960 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-111_swa.pt
+2026-02-24 14:12:08.392 INFO: Epoch 112: head: Default, loss=0.00001542, MAE_E_per_atom=    0.20 meV, MAE_F=    2.21 meV / A
+2026-02-24 14:12:08.393 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-111_swa.pt
+2026-02-24 14:12:08.394 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-112_swa.pt
+2026-02-24 14:12:26.856 INFO: Epoch 113: head: Default, loss=0.00001533, MAE_E_per_atom=    0.19 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:12:26.857 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-112_swa.pt
+2026-02-24 14:12:26.858 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-113_swa.pt
+2026-02-24 14:12:45.313 INFO: Epoch 114: head: Default, loss=0.00001530, MAE_E_per_atom=    0.19 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:12:45.314 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-113_swa.pt
+2026-02-24 14:12:45.315 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-114_swa.pt
+2026-02-24 14:13:03.765 INFO: Epoch 115: head: Default, loss=0.00001530, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:13:03.766 DEBUG: Deleting old checkpoint file: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-114_swa.pt
+2026-02-24 14:13:03.767 DEBUG: Saving checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-115_swa.pt
+2026-02-24 14:13:22.228 INFO: Epoch 116: head: Default, loss=0.00001530, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:13:40.624 INFO: Epoch 117: head: Default, loss=0.00001530, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:13:58.992 INFO: Epoch 118: head: Default, loss=0.00001531, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:14:17.368 INFO: Epoch 119: head: Default, loss=0.00001531, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:14:35.752 INFO: Epoch 120: head: Default, loss=0.00001532, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:14:54.119 INFO: Epoch 121: head: Default, loss=0.00001532, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:15:12.511 INFO: Epoch 122: head: Default, loss=0.00001534, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:15:30.889 INFO: Epoch 123: head: Default, loss=0.00001534, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:15:49.258 INFO: Epoch 124: head: Default, loss=0.00001535, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:16:07.649 INFO: Epoch 125: head: Default, loss=0.00001534, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:16:26.022 INFO: Epoch 126: head: Default, loss=0.00001534, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:16:44.428 INFO: Epoch 127: head: Default, loss=0.00001535, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:17:02.858 INFO: Epoch 128: head: Default, loss=0.00001535, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:17:21.305 INFO: Epoch 129: head: Default, loss=0.00001535, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:17:39.746 INFO: Epoch 130: head: Default, loss=0.00001536, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:17:58.186 INFO: Epoch 131: head: Default, loss=0.00001536, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:18:16.624 INFO: Epoch 132: head: Default, loss=0.00001536, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:18:35.063 INFO: Epoch 133: head: Default, loss=0.00001535, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:18:53.486 INFO: Epoch 134: head: Default, loss=0.00001535, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:19:11.934 INFO: Epoch 135: head: Default, loss=0.00001538, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:19:30.382 INFO: Epoch 136: head: Default, loss=0.00001538, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:19:48.814 INFO: Epoch 137: head: Default, loss=0.00001538, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:20:07.255 INFO: Epoch 138: head: Default, loss=0.00001538, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:20:25.681 INFO: Epoch 139: head: Default, loss=0.00001539, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:20:44.107 INFO: Epoch 140: head: Default, loss=0.00001539, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:21:02.584 INFO: Epoch 141: head: Default, loss=0.00001539, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:21:21.045 INFO: Epoch 142: head: Default, loss=0.00001540, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:21:39.444 INFO: Epoch 143: head: Default, loss=0.00001541, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:21:57.913 INFO: Epoch 144: head: Default, loss=0.00001541, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:22:16.365 INFO: Epoch 145: head: Default, loss=0.00001541, MAE_E_per_atom=    0.18 meV, MAE_F=    2.22 meV / A
+2026-02-24 14:22:16.365 INFO: Stopping optimization after 30 epochs without improvement
+2026-02-24 14:22:16.375 INFO: Training complete
+2026-02-24 14:22:16.375 INFO: 
+2026-02-24 14:22:16.376 INFO: ===========RESULTS===========
+2026-02-24 14:22:16.376 INFO: Loading checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-110.pt
+2026-02-24 14:22:16.390 INFO: Loaded Stage one model from epoch 110 for evaluation
+2026-02-24 14:22:16.390 INFO: Saving model to /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42.model
+2026-02-24 14:22:16.535 INFO: Compiling model, saving metadata to /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/direct_N200_s42_compiled.model
+2026-02-24 14:22:16.827 INFO: Computing metrics for training, validation, and test sets
+2026-02-24 14:22:16.828 INFO: Skipping evaluation for heads: ['pt_head']
+2026-02-24 14:22:16.828 INFO: Evaluating train_Default ...
+2026-02-24 14:22:22.132 INFO: Evaluating valid_Default ...
+2026-02-24 14:22:26.476 INFO: Error-table on TRAIN and VALID:
++---------------+--------------------+-----------------+------------------+
+|  config_type  | MAE E / meV / atom | MAE F / meV / A | relative F MAE % |
++---------------+--------------------+-----------------+------------------+
+| train_Default |           0.3      |          2.1    |         7.43     |
+| valid_Default |           0.3      |          2.2    |         7.64     |
++---------------+--------------------+-----------------+------------------+
+2026-02-24 14:22:26.476 DEBUG: Running inference on train_Default dataset
+2026-02-24 14:22:26.606 DEBUG: Plotting failed: too many indices for tensor of dimension 1
+2026-02-24 14:22:26.606 INFO: Loading checkpoint: /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_epoch-115_swa.pt
+2026-02-24 14:22:26.617 INFO: Loaded Stage two model from epoch 115 for evaluation
+2026-02-24 14:22:26.617 INFO: Saving model to /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/checkpoints/direct_N200_s42_run-42_stagetwo.model
+2026-02-24 14:22:26.704 INFO: Compiling model, saving metadata /home/james/MACE-Helper/runs/hypothesis_test/direct_N200_s42/direct_N200_s42_stagetwo_compiled.model
+2026-02-24 14:22:26.979 INFO: Computing metrics for training, validation, and test sets
+2026-02-24 14:22:26.979 INFO: Skipping evaluation for heads: ['pt_head']
+2026-02-24 14:22:26.979 INFO: Evaluating train_Default ...
+2026-02-24 14:22:32.264 INFO: Evaluating valid_Default ...
+2026-02-24 14:22:36.591 INFO: Error-table on TRAIN and VALID:
++---------------+--------------------+-----------------+------------------+
+|  config_type  | MAE E / meV / atom | MAE F / meV / A | relative F MAE % |
++---------------+--------------------+-----------------+------------------+
+| train_Default |           0.2      |          2.1    |         7.48     |
+| valid_Default |           0.2      |          2.2    |         7.67     |
++---------------+--------------------+-----------------+------------------+
+2026-02-24 14:22:36.592 DEBUG: Running inference on train_Default dataset
+2026-02-24 14:22:36.723 DEBUG: Plotting failed: too many indices for tensor of dimension 1
+2026-02-24 14:22:36.723 INFO: Done
